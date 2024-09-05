@@ -11,7 +11,7 @@
   /* header */
   --font-header: "Cabin Variable", sans-serif;
   --font-weight-header: 600;
-  --line-height-header: 130%;
+  --line-height-header: 116%;
 
   /* body */
   --font-body: "Lato", sans-serif;
@@ -21,7 +21,6 @@
 
   /* dynamic font-sizes */
   --font-size-body: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
-
 
   /* Se över detta sen!!!! */
   --font-h1: clamp(2.375rem, 2.1141rem + 1.3043vw, 3.125rem);
@@ -58,9 +57,12 @@ h6 {
 
 h1 {
   font-size: var(--font-h1);
+  font-weight: 700;
 }
 h2 {
   font-size: var(--font-h2);
+  font-weight: 700;
+
 }
 h3 {
   font-size: var(--font-h3);
