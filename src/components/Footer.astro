@@ -12,6 +12,14 @@
 
 <style>
   footer {
+    grid-column: full;
+    > * {
+    grid-column: main;
+    display: grid;
+    grid: auto/subgrid;
+
+    }
+
     display: flex;
     justify-content: center;
     gap: clamp(1.125rem, 0.212rem + 4.5652vw, 3.75rem);

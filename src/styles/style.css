@@ -8,14 +8,21 @@
     --secondary-light: #E4E4E4;
 
     /* fonts */
-    font-family: 'Cabin Variable', sans-serif;
-    font-family: 'Lato', sans-serif;
+    --font-header: 'Cabin Variable', sans-serif;
+    --font-primary: 'Lato', sans-serif;
+    --font-weight-normal: 400;
+ 
 
 
 
     /* font-sizes */
 
     /* spacing */
+}
 
-
+body {
+     /* fonts */
+     font-family: var(--font-primary);
+     font-weight: var(--font-weight-normal);
+     
 }

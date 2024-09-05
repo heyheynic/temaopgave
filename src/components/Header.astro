@@ -3,14 +3,12 @@
 ---
 
 <header>
-
-    <a href="/">
-      <!-- <img src="/favicon.svg" alt="website logo" class="logo" /> -->
-    </a>
+  <div class="wrapper">
+    <!-- <img src="/favicon.svg" alt="website logo" class="logo" /> -->
 
     <nav>
       <ul>
-        <a href="/index">
+        <a href="/">
           <li>Home</li>
         </a>
         <a href="/case__study">
@@ -24,20 +22,19 @@
         </a>
       </ul>
     </nav>
-
+  </div>
 </header>
+<a href="/"> </a>
 
 <style>
   header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 4em;
-    container: burger / inline-size;
-
-    .logo {
-      width: min(4rem, 5rem);
-      margin-inline-end: auto;
+    grid-column: full;
+    display: grid;
+    grid: auto/subgrid;
+    > .wrapper {
+      grid-column: main;
+      background-color: green;
+      /* container: burger / inline-size;  */
     }
   }
   ul {
@@ -48,14 +45,14 @@
   a {
     text-decoration: none;
     :hover {
-      color: var(--accent);
+      color: inherit;
       text-decoration: underline;
       text-decoration-color: var(--dark);
       text-decoration-thickness: 0.3ex;
       text-underline-offset: 0.4ex;
     }
     :active {
-      color: var(--dark);
+      color: inherit;
     }
   }
 

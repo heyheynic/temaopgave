@@ -1,0 +1,10 @@
+/* --primary01: #FFCC4A; yellow
+--primary02: #4EAF4E; green
+--primary03: #181818; black
+--secondary-dark: #F5F5F5;
+--secondary-light: #E4E4E4; */
+
+header, footer {
+    background-color: var(--primary03);
+    color: var(--secondary-light);
+}

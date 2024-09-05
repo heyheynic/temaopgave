@@ -2,18 +2,29 @@
 
 @import url("./reset.css") layer(reset);
 @import url("./style.css") layer(style);
+@import url("./components.css") layer(style);
 
 @layer global {
+  :root {
+    --full: 1fr;
+    --content: min(1200px, 100% - 2em * 2);
+  }
+  body {
+    display: grid;
 
-  html {
-    color: red;
+    grid-template-columns:
+      [full-start] var(--full)
+      [main] var(--content)
+      var(--full) [full-end];
+
+    grid-template-rows: fit-content auto fit-content;
+
+    > * {
+      grid-column: main;
+    }
   }
 
-  h1 {
-    font-size: 4em;
-    font-weight: bold;
-
-  }
-
-
+  /* content max width 1200px 
+  Case__Study contains an area with a smaller width, the text, which should have a ch max-width
+  */
 }
