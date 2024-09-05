@@ -1,0 +1,70 @@
+---
+
+---
+
+<div class="header__wrapper">
+    <a href="/">
+      <img src="/favicon.svg" alt="website logo" class="logo" />
+    </a>
+  
+    <nav>
+      <ul>
+        <a href="portfolio">
+          <li>Portfolio</li>
+        </a>
+        <a href="blog">
+          <li>Blog</li>
+        </a>
+        <a href="about">
+          <li>About</li>
+        </a>
+        <a href="contact">
+          <li>Contact</li>
+        </a>
+      </ul>
+    </nav>
+  </div>
+  
+  <style>
+    .header__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4em;
+      container: burger / inline-size;
+  
+      .logo {
+        width: min(4rem, 5rem);
+        margin-inline-end: auto;
+      }
+    }
+    ul {
+      display: flex;
+      gap: 1em;
+    }
+  
+    a {
+      text-decoration: none;
+      :hover {
+        color: var(--accent);
+        text-decoration: underline;
+        text-decoration-color: var(--dark);
+        text-decoration-thickness: 0.3ex;
+        text-underline-offset: 0.4ex;
+      }
+      :active {
+        color: var(--dark);
+      }
+    }
+  
+    @container burger (width < 500px) {
+      nav {
+        background-color: red;
+  
+        ul {
+          display: none;
+        }
+      }
+    }
+  </style>
+  
