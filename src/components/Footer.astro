@@ -3,41 +3,40 @@
 ---
 
 <footer>
-  <!-- <section class="footer"> -->
-  <a href="#" target="”_blank”"> link</a>
-
-  <a href="#" target="”_blank”"> link </a>
-  <!-- </section> -->
+  <h5>AskExperts</h5>
+  <div class="line"></div>
+  <div>
+    ©2022 Consultalk. All rights reserved
+    <div>
+      <a href="#" target="”_blank”"> Terms of Service </a>
+      <a href="#" target="”_blank”"> Privacy Policy </a>
+    </div>
+  </div>
 </footer>
 
 <style>
   footer {
     grid-column: full;
-    > * {
-    grid-column: main;
     display: grid;
     grid: auto/subgrid;
+    gap: var(--gap);
+    padding: var(--padding-40) 0 var(--padding-60);
 
+    > * {
+      grid-column: main;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-
-    display: flex;
-    justify-content: center;
-    gap: clamp(1.125rem, 0.212rem + 4.5652vw, 3.75rem);
-    padding: 1rem 3rem;
-
-    svg {
-      border-radius: 50%;
-      width: clamp(2.125rem, 1.8207rem + 1.5217vw, 3rem);
+    .line {
+      background: #707070;
+      height: 1px;
+      width: 100%;
+      border-radius: 10px;
     }
-
-    a:hover {
-      color: var(--accent);
-      transition: scale 150ms ease-out;
-      scale: 1.1;
-    }
-
-    a {
-      transition: 200ms ease-in;
+    a::before {
+      content: " | ";
+      margin-inline: 0.5em;
     }
   }
 </style>
