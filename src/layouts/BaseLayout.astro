@@ -1,9 +1,16 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-
-
 import "../styles/global.css";
+
+// Supports weights 400-700
+import '@fontsource-variable/cabin';
+
+import '@fontsource/lato/100.css';
+import '@fontsource/lato/300.css';
+import '@fontsource/lato/400.css';
+import '@fontsource/lato/700.css';
+import '@fontsource/lato/900.css';
 
 const { pageTitle } = Astro.props;
 ---

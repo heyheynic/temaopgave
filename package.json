@@ -10,6 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource-variable/cabin": "^5.0.20",
+    "@fontsource/lato": "^5.0.22",
     "astro": "^4.15.2",
     "astro-icon": "^1.1.1"
   }
