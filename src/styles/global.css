@@ -1,0 +1,17 @@
+@layer reset, style, components, overrides;
+
+@import url("./reset.css") layer(reset);
+@import url("./style.css") layer(style);
+
+@layer global {
+
+  html {
+    color: red;
+  }
+
+  h1 {
+    font-size: 4em;
+    font-weight: bold;
+
+  }
+}

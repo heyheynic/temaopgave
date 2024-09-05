@@ -2,69 +2,70 @@
 
 ---
 
-<div class="header__wrapper">
+<header>
+  <!-- <div class="header__wrapper"> -->
     <a href="/">
-      <img src="/favicon.svg" alt="website logo" class="logo" />
+      <!-- <img src="/favicon.svg" alt="website logo" class="logo" /> -->
     </a>
-  
+
     <nav>
       <ul>
-        <a href="portfolio">
-          <li>Portfolio</li>
+        <a href="/index">
+          <li>Home</li>
         </a>
-        <a href="blog">
-          <li>Blog</li>
+        <a href="/case__study">
+          <li>Case Study</li>
         </a>
-        <a href="about">
+        <a href="/team">
+          <li>Team</li>
+        </a>
+        <a href="/about">
           <li>About</li>
-        </a>
-        <a href="contact">
-          <li>Contact</li>
         </a>
       </ul>
     </nav>
-  </div>
-  
-  <style>
-    .header__wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 4em;
-      container: burger / inline-size;
-  
-      .logo {
-        width: min(4rem, 5rem);
-        margin-inline-end: auto;
+  <!-- </div> -->
+</header>
+
+<style>
+  .header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4em;
+    container: burger / inline-size;
+
+    .logo {
+      width: min(4rem, 5rem);
+      margin-inline-end: auto;
+    }
+  }
+  ul {
+    display: flex;
+    gap: 1em;
+  }
+
+  a {
+    text-decoration: none;
+    :hover {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: var(--dark);
+      text-decoration-thickness: 0.3ex;
+      text-underline-offset: 0.4ex;
+    }
+    :active {
+      color: var(--dark);
+    }
+  }
+
+  @container burger (width < 500px) {
+    nav {
+      background-color: red;
+
+      ul {
+        display: none;
       }
     }
-    ul {
-      display: flex;
-      gap: 1em;
-    }
-  
-    a {
-      text-decoration: none;
-      :hover {
-        color: var(--accent);
-        text-decoration: underline;
-        text-decoration-color: var(--dark);
-        text-decoration-thickness: 0.3ex;
-        text-underline-offset: 0.4ex;
-      }
-      :active {
-        color: var(--dark);
-      }
-    }
-  
-    @container burger (width < 500px) {
-      nav {
-        background-color: red;
-  
-        ul {
-          display: none;
-        }
-      }
-    }
-  </style>
-  
+  }
+</style>
