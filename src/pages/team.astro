@@ -1,7 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+import EmployeeSection from "../components/EmployeeSection.astro";
 const pageTitle = "AskExperts";
+
+
+
+
+const employeeData1 = await fetch (
+    "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json"
+).then((res) => res.json());
+
+const employeeData2 = await fetch (
+    "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json"
+).then((res) => res.json());
+
+
 ---
 
 <BaseLayout pageTitle={pageTitle} />
+
+<EmployeeSection data={employeeData1}/>
+<EmployeeSection />
+<EmployeeSection />
+<EmployeeSection />
+
+
+
 </BaseLayout>

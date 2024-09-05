@@ -4,6 +4,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "AskExperts";
 
 import browser from "../assets/images/browser.svg"
+import EmployeeCard from "../components/EmployeeCard.astro";
+
+const employeeData = await fetch (
+    "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json"
+).then((res) => res.json());
 
 //import ScrollingContainer from "../components/ScrollingContainer.astro";
 
@@ -12,7 +17,7 @@ import browser from "../assets/images/browser.svg"
 <BaseLayout pageTitle={pageTitle} >
 <h1>Heading 1 Lorem, ipsum dolor.</h1>
 <h2>Heading 2 Lorem, ipsum.</h2>
-<Image alt="hej" src={browser} format="avif"/>
+<!-- <Image alt="hej" src={browser} format="avif"/> -->
 
 <p>Paragraph Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti aut incidunt mollitia recusandae architecto reiciendis, ipsam libero laborum eos cum.</p>
 
@@ -20,3 +25,7 @@ import browser from "../assets/images/browser.svg"
 <!-- <ScrollingContainer cardContent={cardContent} /> -->
 
 </BaseLayout>
+
+<style>
+   
+</style>

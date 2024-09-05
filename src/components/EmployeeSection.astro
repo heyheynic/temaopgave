@@ -1,0 +1,17 @@
+---
+import type { ACTION_ERROR_CODES } from "astro:actions";
+import EmployeeCard from "./EmployeeCard.astro";
+
+const { data } = Astro.props;
+const { employee } = Astro.props;
+
+console.log(data);
+---
+
+<section>
+
+{
+    data.map(employee => <EmployeeCard {employee} />)
+}
+
+</section>
