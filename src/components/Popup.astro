@@ -2,16 +2,18 @@
 // login
 ---
 
-<button popovertarget="popup">Login</button>
 
-<div popover id="popup">
-  <h2>Dashboard Login</h2>
-  <form action="">
-    <input type="text" placeholder="Enter Email" required />
-    <input type="text" placeholder="Enter Password" required />
-    <input type="submit" value="Go to dashboard" />
-  </form>
-</div>
+  <button popovertarget="popup">Login</button>
+
+  <div popover id="popup">
+    <h2>Dashboard Login</h2>
+    <form action="">
+      <input type="text" placeholder="Enter Email" required />
+      <input type="text" placeholder="Enter Password" required />
+      <input type="submit" value="Go to dashboard" />
+    </form>
+  </div>
+
 
 <style>
   button {
@@ -23,13 +25,14 @@
   }
   div::backdrop {
     backdrop-filter: blur(10px);
+    background-color: oklch(from var(--primary03) l c h / calc(alpha - 0.3));
     padding: 2.5rem 3.75rem 3.75rem 3.75rem;
   }
 
   div {
     border-radius: 1.875rem;
-    padding: var(--padding-40) var(--padding-60) var(--padding-60)
-      var(--padding-60);
+    padding: var(--padding-40) var(--padding-60-horizontal) 
+      var(--padding-60-vertical);
     background-color: var(--primary03);
     color: var(--secondary-light);
     width: clamp(17.5rem, 6.8182rem + 53.4091vw, 46.875rem);
@@ -45,7 +48,7 @@
     display: grid;
     width: clamp(16.25rem, 14.9773rem + 6.3636vw, 19.75rem);
     margin: auto;
-    place-self: center;
+    place-items: center;
     gap: var(--gap);
     input {
       background-color: white;
@@ -56,6 +59,7 @@
     input[type="submit"] {
       background-color: var(--primary01);
       justify-self: center;
+      padding: var(--primary-button-padding);
     }
   }
 </style>

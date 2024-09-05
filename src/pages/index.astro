@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "AskExperts";
 
 import browser from "../assets/images/browser.svg"
+import Hero from "../components/Hero.astro";
 
 //import ScrollingContainer from "../components/ScrollingContainer.astro";
 
@@ -11,7 +12,8 @@ import browser from "../assets/images/browser.svg"
 ---
 <BaseLayout pageTitle={pageTitle} >
 <h1>Heading 1 Lorem, ipsum dolor.</h1>
-<h2>Heading 2 Lorem, ipsum.</h2>
+
+<Hero />
 <Image alt="hej" src={browser} format="avif"/>
 
 <p>Paragraph Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti aut incidunt mollitia recusandae architecto reiciendis, ipsam libero laborum eos cum.</p>
