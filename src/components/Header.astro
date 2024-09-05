@@ -1,10 +1,10 @@
 ---
-
+import Popup from "./Popup.astro";
 ---
 
 <header>
   <div class="wrapper">
-    <!-- <img src="/favicon.svg" alt="website logo" class="logo" /> -->
+    <a href="/"><div class="logo">AskExperts</div></a>
 
     <nav>
       <ul>
@@ -22,28 +22,39 @@
         </a>
       </ul>
     </nav>
+
+    <Popup />
   </div>
 </header>
-<a href="/"> </a>
 
 <style>
   header {
     grid-column: full;
     display: grid;
     grid: auto/subgrid;
+    height: clamp(3.5rem, 2.2826rem + 6.087vw, 7rem);
+    align-items: center;
     > .wrapper {
       grid-column: main;
-      background-color: green;
-      /* container: burger / inline-size;  */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      container: burger / inline-size;
     }
+  }
+
+  .logo {
+    font-family: var(--font-header);
+    font-size: var(--font-h6);
+    font-weight: var(--font-weight-header);
+    line-height: 105%;
   }
   ul {
     display: flex;
-    gap: 1em;
+    gap: var(--gap);
   }
 
   a {
-    text-decoration: none;
     :hover {
       color: inherit;
       text-decoration: underline;
@@ -56,7 +67,7 @@
     }
   }
 
-  @container burger (width < 500px) {
+  @container burger (width < 600px) {
     nav {
       background-color: red;
 

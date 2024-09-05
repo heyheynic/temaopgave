@@ -30,7 +30,19 @@
   --font-h5: clamp(1.65rem, 1.5682rem + 0.4091vw, 1.875rem);
   --font-h6: clamp(1.375rem, 1.3068rem + 0.3409vw, 1.5625rem);
 
-  /* spacing */
+  /*  --- spacing --- */
+
+  --gap: clamp(1.25rem, 1.0227rem + 1.1364vw, 1.875rem);
+  --padding-40: clamp(1.875rem, 1.6477rem + 1.1364vw, 2.5rem);
+  --padding-60: clamp(3.125rem, 2.8977rem + 1.1364vw, 3.75rem);
+
+  /* flow-space */
+  --space-s: clamp(1.125rem, 1.0795rem + 0.2273vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6193rem + 0.3409vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.1591rem + 0.4545vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2386rem + 0.6818vw, 3.75rem);
+  --space-2xl: clamp(4.5rem, 4.3182rem + 0.9091vw, 5rem);
+ 
 }
 
 body {
@@ -41,6 +53,14 @@ body {
 
   li {
     line-height: var(--line-height-li);
+  }
+
+  --flow-space: var(--space-s);
+
+  article {
+    > * + * {
+      margin-block-start: var(--flow-space, 1em);
+    }
   }
 }
 
@@ -56,23 +76,31 @@ h6 {
 }
 
 h1 {
+  --flow-space: var(--space-2xl);
+
   font-size: var(--font-h1);
   font-weight: 700;
 }
 h2 {
+  --flow-space: var(--space-xl);
   font-size: var(--font-h2);
   font-weight: 700;
-
 }
 h3 {
+  --flow-space: var(--space-l);
   font-size: var(--font-h3);
 }
 h4 {
+  --flow-space: var(--space-l);
   font-size: var(--font-h4);
 }
 h5 {
+  --flow-space: var(--space-m);
+
   font-size: var(--font-h5);
 }
 h6 {
+  --flow-space: var(--space-m);
+
   font-size: var(--font-h6);
 }

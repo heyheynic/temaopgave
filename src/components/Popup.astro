@@ -1,0 +1,61 @@
+---
+// login
+---
+
+<button popovertarget="popup">Login</button>
+
+<div popover id="popup">
+  <h2>Dashboard Login</h2>
+  <form action="">
+    <input type="text" placeholder="Enter Email" required />
+    <input type="text" placeholder="Enter Password" required />
+    <input type="submit" value="Go to dashboard" />
+  </form>
+</div>
+
+<style>
+  button {
+    padding: clamp(0.125rem, 0.0795rem + 0.2273vw, 0.25rem)
+      clamp(0.5rem, 0.3182rem + 0.9091vw, 1rem);
+    background: var(--primary01);
+    color: var(--primary03);
+    border-radius: 1.25rem;
+  }
+  div::backdrop {
+    backdrop-filter: blur(10px);
+    padding: 2.5rem 3.75rem 3.75rem 3.75rem;
+  }
+
+  div {
+    border-radius: 1.875rem;
+    padding: var(--padding-40) var(--padding-60) var(--padding-60)
+      var(--padding-60);
+    background-color: var(--primary03);
+    color: var(--secondary-light);
+    width: clamp(17.5rem, 6.8182rem + 53.4091vw, 46.875rem);
+
+    h2 {
+      padding: 0 0 var(--padding-40);
+      text-align: center;
+    }
+  }
+
+  form {
+    color: black;
+    display: grid;
+    width: clamp(16.25rem, 14.9773rem + 6.3636vw, 19.75rem);
+    margin: auto;
+    place-self: center;
+    gap: var(--gap);
+    input {
+      background-color: white;
+      padding: 1em 2em;
+      border-radius: 54px;
+    }
+
+    input[type="submit"] {
+      background-color: var(--primary01);
+      justify-self: center;
+    }
+  }
+</style>
