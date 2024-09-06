@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "AskExperts";
 
@@ -41,6 +40,9 @@ import { Icon } from "astro-icon/components";
       </div>
     </div>
   </section>
+  <section class="block-3">
+    <Icon name="tick" />
+  </section>
 </BaseLayout>
 
 <style>
@@ -72,7 +74,16 @@ import { Icon } from "astro-icon/components";
       }
     }
   }
+
+
+  .block-3 {
+    background-color: beige;
+display: grid;
+grid: repeat(5, 1fr) / auto;
+  }
   [data-icon] {
     width: clamp(1.125rem, 1.0795rem + 0.2273vw, 1.25rem);
   }
+
+
 </style>
