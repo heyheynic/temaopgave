@@ -3,6 +3,7 @@
 @import url("./reset.css") layer(reset);
 @import url("./style.css") layer(style);
 @import url("./components.css") layer(style);
+@import url("./overrides.css") layer(style);
 
 @layer global {
   :root {
@@ -19,12 +20,11 @@
 
     grid-template-rows: auto 1fr auto;
 
-    
-
     main {
       grid-column: full;
       display: grid;
       grid: auto/subgrid;
+      height: auto;
       > * {
         grid-column: main;
       }

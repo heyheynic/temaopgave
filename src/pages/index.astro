@@ -3,9 +3,10 @@ import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "AskExperts";
 
-import browser from "../assets/images/browser.svg";
 import Hero from "../components/Hero.astro";
 import ImageContainer from "../components/ImageContainer.astro";
+import TitleColored from "../components/TitleColored.astro";
+import { Icon } from "astro-icon/components";
 
 //import ScrollingContainer from "../components/ScrollingContainer.astro";
 
@@ -13,19 +14,77 @@ import ImageContainer from "../components/ImageContainer.astro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <Hero />
 
-    <Hero />
-
-
-  <section class="section__2">
+  <section class="block-2">
     <ImageContainer />
+    <div class="text__area">
+      <TitleColored />
+      <h2>What To Expect</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+      <div class="checklist">
+        <Icon name="tick" />
+        <p>
+          Bring to the table win-win survival strategies to ensure proactive
+          domination. At the end of the day.
+        </p>
+        <Icon name="tick" />
+        <p>
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity to beta test override the digital.
+        </p>
+      </div>
+    </div>
   </section>
-
-  <!-- <Image alt="hej" src={browser} format="avif"/>
-
-<p>Paragraph Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti aut incidunt mollitia recusandae architecto reiciendis, ipsam libero laborum eos cum.</p>
- -->
-
-  <!-- <ScrollingContainer cardContent={cardContent} /> -->
 </BaseLayout>
 
+<style>
+  .block-2 {
+    display: grid;
+    grid: repeat(6, 1fr) / 1fr 1fr;
+    gap: clamp(2.625rem, 1.7159rem + 4.5455vw, 5.125rem);
+
+    :first-child {
+      grid-row: 2/-1;
+    }
+
+    .text__area {
+      grid-column: 2;
+      grid-row: 1/5;
+
+      display: grid;
+      grid: auto / auto;
+      gap: 0.8rem;
+      max-width: 70ch;
+
+      :first-child {
+        grid-row: 1;
+      }
+
+      .checklist {
+        display: grid;
+        grid: auto/ auto 1fr;
+        gap: var(--gap);
+        align-items: center;
+        margin: 1rem 0;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      display: flex;
+      flex-direction: column-reverse;
+
+      .text__area {
+        place-content: center;
+      }
+    }
+  }
+  [data-icon] {
+    width: clamp(1.125rem, 1.0795rem + 0.2273vw, 1.25rem);
+  }
+</style>

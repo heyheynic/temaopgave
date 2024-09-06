@@ -60,14 +60,14 @@ body {
     line-height: var(--line-height-li);
   }
 
-  --flow-space: var(--space-s);
+  /* --flow-space: var(--space-s);
 
 
   article {
     > * + * {
       margin-block-start: var(--flow-space, 1em);
     }
-  }
+  } */
 }
 
 h1,
