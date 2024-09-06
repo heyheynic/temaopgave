@@ -24,7 +24,7 @@
       grid-column: full;
       display: grid;
       grid: auto/subgrid;
-      height: auto;
+
       > * {
         grid-column: main;
       }
