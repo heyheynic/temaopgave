@@ -69,6 +69,25 @@ const projectionsData = await fetch(
     </section>
     <Scroller data={projectionsData} />
   </div>
+  <div class="full yellow">
+    <section class="block-4">
+<div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis harum consequatur placeat porro quam vero rerum in rem odio saepe dolor minus temporibus nobis, maiores assumenda molestias earum libero quae fugit. Tempora soluta, consequatur obcaecati sed velit illum pariatur dolore.</div>
+
+    </section>
+  </div>
+  <div class="full black">
+    <section class="block-5">
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto soluta
+        consectetur cupiditate dolorum labore eius esse vel rerum reprehenderit
+        temporibus.
+      </div>
+    </section>
+  </div>
+  
+  <section class="block-6">
+    
+  </section>
 </BaseLayout>
 
 <style>
@@ -134,6 +153,22 @@ const projectionsData = await fetch(
         background-color: blue;
         padding: 2em;
       }
+    }
+
+    .yellow {
+      background-color: var(--primary01);
+    }
+    .block-4 {
+      grid-column: main;
+    }
+
+    .black {
+      background-color: var(--primary03);
+      color: white;
+    }
+
+    .block-5 {
+      grid-column: main;
     }
   }
   [data-icon] {
