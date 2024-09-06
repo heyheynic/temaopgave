@@ -3,23 +3,29 @@ import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "AskExperts";
 
-import browser from "../assets/images/browser.svg"
+import browser from "../assets/images/browser.svg";
 import Hero from "../components/Hero.astro";
+import ImageContainer from "../components/ImageContainer.astro";
 
 //import ScrollingContainer from "../components/ScrollingContainer.astro";
 
 //import { cardContent } from "../data/card-content.js";
 ---
-<BaseLayout pageTitle={pageTitle} >
+
+<BaseLayout pageTitle={pageTitle}>
+
+    <Hero />
 
 
-<Hero />
+  <section class="section__2">
+    <ImageContainer />
+  </section>
 
-<!-- <Image alt="hej" src={browser} format="avif"/>
+  <!-- <Image alt="hej" src={browser} format="avif"/>
 
 <p>Paragraph Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti aut incidunt mollitia recusandae architecto reiciendis, ipsam libero laborum eos cum.</p>
  -->
 
-<!-- <ScrollingContainer cardContent={cardContent} /> -->
-
+  <!-- <ScrollingContainer cardContent={cardContent} /> -->
 </BaseLayout>
+

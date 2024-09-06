@@ -24,7 +24,7 @@
     main {
       grid-column: full;
       display: grid;
-      grid: subgrid/subgrid;
+      grid: auto/subgrid;
       > * {
         grid-column: main;
       }
