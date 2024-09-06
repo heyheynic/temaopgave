@@ -32,9 +32,13 @@ import hero from "../assets/images/hero.png";
   section {
     grid-column: full;
     grid-row: 1/3;
-
+    /* height: 60%;  */
     display: grid;
     grid: repeat(5, 1fr) / subgrid;
+
+    @media screen and (max-width: 1080px) {
+      height: 60%;
+    }
   }
   .background__container {
     grid-column: full;
@@ -56,6 +60,23 @@ import hero from "../assets/images/hero.png";
         object-fit: cover;
       }
     }
+
+    @media screen and (max-width: 1070px) {
+      grid: auto / 1fr;
+
+      .background__color {
+        grid-row: 1;
+        grid-column: 1/-1;
+      }
+
+      .img__container {
+        grid-row: 2;
+        grid-column: 1/-1;
+        object-fit: contain;
+        height: 0; /* helps making img container as tall as .background__color */
+        min-height: 100%; /* helps making img container as tall as .background__color */
+      }
+    }
   }
   .introduction {
     grid-column: main;
@@ -65,14 +86,23 @@ import hero from "../assets/images/hero.png";
     grid: auto / 1fr 1fr;
 
     color: var(--secondary-light);
+    align-items: center;
+    text-wrap: balance;
+    margin: 5em 0;
 
     > * {
       grid-column: 1;
     }
 
     button {
-      height: fit-content;
-      width: fit-content;
+      justify-self: start;
+    }
+
+    @media screen and (max-width: 1070px) {
+      grid-row: 1/3;
+      grid: auto / 1fr;
+
+      max-width: 65ch;
     }
   }
 
