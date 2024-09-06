@@ -1,5 +1,5 @@
 ---
-// const { cardContent } = Astro.props; 
+import CardDynamic from "./CardDynamic.astro";
 
 // Här ska jag mappa igenom json-filen istället:
 
@@ -8,36 +8,29 @@
 // Core values: https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/corevalues.json
 
 // Employees https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json
+const { data } = Astro.props;
 ---
 
-<ul class="full-width">
-<!-- {
-    cardContent.map((card) => (
-      <li>
-        <h3>{card.title}</h3>
-        <p>{card.body}</p>
-      </li>
-    ))
-  } -->
+<ul class="scroller">
+  {data.values.map((projections) => <CardDynamic {projections} />)}
 </ul>
 
 <style>
   ul {
+    grid-column: full;
+
     list-style: none;
     overflow-x: auto;
     display: flex;
-    gap: var(--card-gap);
+    gap: var(--gap);
     scroll-snap-type: x mandatory;
+    gap: var(--gap);
 
-    li {
+    > * {
       flex-basis: clamp(2rem, 65%, 400px);
       flex-shrink: 0;
 
-      padding: var(--card-padding);
-      background: var(--card-background);
-      border-radius: var(--card-border-radius);
-      color: var(--card-text-color);
-
+   
       scroll-snap-align: center;
       scroll-snap-stop: always;
     }

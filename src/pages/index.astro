@@ -6,6 +6,12 @@ import Hero from "../components/Hero.astro";
 import ImageContainer from "../components/ImageContainer.astro";
 import TitleColored from "../components/TitleColored.astro";
 import { Icon } from "astro-icon/components";
+import PrimBtn from "../components/PrimBtn.astro";
+import Scroller from "../components/Scroller.astro";
+
+const projectionsData = await fetch(
+  "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/projections.json"
+).then((res) => res.json());
 
 //import ScrollingContainer from "../components/ScrollingContainer.astro";
 
@@ -33,6 +39,7 @@ import { Icon } from "astro-icon/components";
           domination. At the end of the day.
         </p>
         <Icon name="tick" />
+
         <p>
           Capitalize on low hanging fruit to identify a ballpark value added
           activity to beta test override the digital.
@@ -40,50 +47,96 @@ import { Icon } from "astro-icon/components";
       </div>
     </div>
   </section>
-  <section class="block-3">
-    <Icon name="tick" />
-  </section>
+  <div class="full">
+    <section class="block-3">
+      <div class="icon__container">
+        <img src="src/icons/stats.svg" alt="statistics icon
+      " />
+      </div>
+      <div class="text__area">
+        <h2>Financial Projections</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div class="buttons">
+        <PrimBtn />
+        <PrimBtn />
+      </div>
+    </section>
+    <Scroller data={projectionsData} />
+  </div>
 </BaseLayout>
 
 <style>
-  .block-2 {
-    display: grid;
-    grid: auto / 1fr 1fr;
-    gap: clamp(2.625rem, 1.7159rem + 4.5455vw, 5.125rem);
-
-    .text__area {
+  @layer components {
+    .block-2 {
       display: grid;
-      gap: 0.8rem;
-      max-width: 70ch;
-
-      .checklist {
-        display: grid;
-        grid: auto/ auto 1fr;
-        gap: var(--gap);
-        align-items: center;
-        margin: 1rem 0;
-      }
-    }
-
-    @media screen and (max-width: 900px) {
-      display: flex;
-      flex-direction: column-reverse;
+      grid: auto / 1fr 1fr;
+      gap: clamp(2.625rem, 1.7159rem + 4.5455vw, 5.125rem);
 
       .text__area {
-        place-content: center;
+        display: grid;
+        gap: 0.8rem;
+        max-width: 70ch;
+
+        .checklist {
+          display: grid;
+          grid: auto/ auto 1fr;
+          gap: var(--gap);
+          align-items: center;
+          margin: 1rem 0;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .text__area {
+          place-content: center;
+        }
       }
     }
-  }
+    .full {
+      background-color: var(--secondary-dark);
+      display: grid;
+      grid: auto/subgrid;
+    }
+    .block-3 {
+      grid-column: main;
 
+      display: grid;
+      grid: repeat(4, 1fr) / 1fr 1fr;
 
-  .block-3 {
-    background-color: beige;
-display: grid;
-grid: repeat(5, 1fr) / auto;
+      .icon__container {
+        width: clamp(6rem, 5.7955rem + 1.0227vw, 6.5625rem);
+      }
+
+      .text__area {
+        grid-row: 2/4;
+        grid-column: 1/2;
+      }
+
+      .buttons {
+        grid-row: 3;
+        justify-self: end;
+        align-self: start;
+
+        display: flex;
+        gap: var(--gap);
+      }
+
+      .scroller {
+        background-color: blue;
+        padding: 2em;
+      }
+    }
   }
   [data-icon] {
     width: clamp(1.125rem, 1.0795rem + 0.2273vw, 1.25rem);
   }
-
-
 </style>

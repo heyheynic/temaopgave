@@ -29,6 +29,10 @@
         grid-column: main;
       }
     }
+
+    .full{
+      grid-column: full;
+    }
   }
 
   /* content max width 1200px 
