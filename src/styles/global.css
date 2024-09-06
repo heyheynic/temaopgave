@@ -27,6 +27,9 @@
 
       > * {
         grid-column: main;
+        + * {
+        padding: clamp(6.25rem, 5.1591rem + 5.4545vw, 9.25rem) 0 ;
+        }
       }
     }
 
