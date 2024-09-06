@@ -1,25 +1,28 @@
 ---
 import PrimBtn from "./PrimBtn.astro";
 
-
+// create some sort of array to the cards
 ---
 
 <section class="card">
-    <h2>Titel</h2>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, porro. Ipsa error cum officiis, voluptatem quidem veritatis eaque dolor voluptas.</p>
-<PrimBtn/>
+ <h3>Titel</h3>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, porro.
+    Ipsa error cum officiis, voluptatem quidem veritatis eaque dolor voluptas.
+  </p>
+  <PrimBtn title="Data" />
 </section>
 
 <style>
-
-    .card {
-        backdrop-filter: blur(10px);
-        background-color: oklch(from var(--primary03) l c h / calc(alpha - 0.3));
-        display: flex;
-        flex-direction: column;
-        border-radius: 20px;
-        align-items: start;
-        color: var(--secondary-light);
-        padding: var(--padding-40);
-    }
+  .card {
+    backdrop-filter: blur(10px);
+    background-color: oklch(from var(--primary03) l c h / calc(alpha - 0.3));
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: start;
+    color: var(--secondary-light);
+    padding: var(--padding-40);
+    gap: var(--gap);
+  }
 </style>

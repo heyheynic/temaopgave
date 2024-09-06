@@ -78,11 +78,10 @@ import hero from "../assets/images/hero.png";
 
   .services {
     grid-column: main;
-
     grid-row: 4/-1;
-
     display: grid;
-    grid: 1fr / 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--gap);
+    margin: var(--gap);
   }
 </style>
