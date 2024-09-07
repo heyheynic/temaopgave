@@ -1,0 +1,55 @@
+---
+// got a lot of inspiration from tutorial https://www.freecodecamp.org/news/css-only-pie-chart/ and https://codepen.io/Dannie-Vinther/pen/RwzeYeV
+
+const { number } = Astro.props;
+---
+
+<div class="parent" style={`--percent: ${number}%`}>
+  <div class="child"></div>
+  {number}%
+</div>
+
+<style>
+  @property --percent {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 0%;
+  }
+
+  .parent {
+    --width: clamp(9.0625rem, 8.1534rem + 4.5455vw, 11.5625rem);
+    --offset-pos: 5px;
+
+    border: var(--offset-pos) solid transparent;
+    background:
+      linear-gradient(var(--primary01), var(--primary01)) padding-box,
+      conic-gradient(white var(--percent), #daae3c 0) border-box;
+    position: relative;
+    display: grid;
+    place-content: center;
+    font-size: var(--font-h2);
+    aspect-ratio: 1;
+    width: var(--width);
+    border-radius: 1e5px;
+    /* margin-inline: auto;  */
+    animation: --pie 2s cubic-bezier(0.22, 0.13, 0.2, 0.94) infinite;
+
+    .child {
+      aspect-ratio: 1;
+      border-radius: 99px;
+      width: 30px;
+      background: rgb(0, 0, 0);
+      border: white solid 5px;
+      position: absolute;
+      offset-path: border-box;
+      offset-distance: var(--percent);
+      offset-anchor: 50% calc(50% - var(--offset-pos) / 2);
+    }
+  }
+
+  @keyframes --pie {
+    from {
+      --percent: 0%;
+    }
+  }
+</style>
