@@ -3,13 +3,17 @@ import CardDynamic from "./CardDynamic.astro";
 const { theme, data, layout } = Astro.props;
 ---
 
-<ul class="scroller">
+<!-- <ul class="scroller">
   {
     data.values.map((dataType) => (
       <CardDynamic {dataType} {theme} {layout} />
     ))
   }
+</ul> -->
+<ul class="scroller">
+  <CardDynamic data={data} theme={theme} layout={layout} />
 </ul>
+
 
 <style>
   ul {
@@ -21,6 +25,7 @@ const { theme, data, layout } = Astro.props;
     gap: var(--gap);
     scroll-snap-type: x mandatory;
     gap: var(--gap);
+    
 
     > * {
       flex-basis: clamp(2rem, 65%, 400px);
