@@ -1,12 +1,13 @@
 ---
 // got a lot of inspiration from tutorial https://www.freecodecamp.org/news/css-only-pie-chart/ and https://codepen.io/Dannie-Vinther/pen/RwzeYeV
 
-const { number } = Astro.props;
+const { percent } = Astro.props;
 ---
 
-<div class="parent" style={`--percent: ${number}%`}>
-  <div class="child"></div>
-  {number}%
+<div class="pie" style={`--percent: ${percent}%`}>
+  <div class="circle"></div>
+  {percent}%
+  <!-- <div class="value">0%</div> -->
 </div>
 
 <style>
@@ -16,7 +17,7 @@ const { number } = Astro.props;
     initial-value: 0%;
   }
 
-  .parent {
+  .pie {
     --width: clamp(9.0625rem, 8.1534rem + 4.5455vw, 11.5625rem);
     --offset-pos: 5px;
 
@@ -31,10 +32,10 @@ const { number } = Astro.props;
     aspect-ratio: 1;
     width: var(--width);
     border-radius: 1e5px;
-    /* margin-inline: auto;  */
     animation: --pie 2s cubic-bezier(0.22, 0.13, 0.2, 0.94) infinite;
 
-    .child {
+
+    .circle {
       aspect-ratio: 1;
       border-radius: 99px;
       width: 30px;
@@ -51,5 +52,51 @@ const { number } = Astro.props;
     from {
       --percent: 0%;
     }
+
+  
   }
 </style>
+
+<script>
+  // # Text below source: https://zellwk.com/blog/css-values-in-js/
+
+  // Inline styles are styles that are present in the HTML in the style attribute.
+  // To get inline styles, you can use the style property.
+  // const element = document.querySelector('.element')
+  // const fontSize = element.style.fontSize
+  // console.log(fontSize) // 2em
+  // const color = element.style.color
+  // console.log(color) // red
+
+  // Getting computed styles
+
+  // If your styles are written in the CSS file, you need to get the computed style. To do so, you can use getComputedStyle.
+  // It takes in two values:
+  // const style = getComputedStyle(Element, pseudoElement)
+  // Element here refers to the element you’ve selected with querySelector.
+
+  // pseudoElement here refers to the string of the pseudo element you’re trying to get (if any). You can omit this value if you’re not selecting a pseudo element.
+
+  // Let’s walk through an example to help make sense of things. Say you have the following HTML and CSS:
+
+  // <div class="element">This is my element</div>
+
+  // .element {
+  //  background-color: red;
+  // }
+
+  // First, you need to select the element with querySelector. Then, you use getComputedStyle to get the element’s styles.
+
+  // const element = document.querySelector('.element')
+  // const style = getComputedStyle(element)
+
+  // If you log style, you should see an object that contains every CSS property and their respective values.
+
+  // -------------------
+
+  // This is the code I want to target
+  //  <div class="pie" style={`--percent: ${percent}%`}>
+
+    const pie = document.querySelector('.pie');
+  // const counter = pie.style.--percent 
+</script>
