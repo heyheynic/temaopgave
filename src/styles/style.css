@@ -24,6 +24,7 @@
 
   /* dynamic font-sizes */
   --font-size-body: clamp(0.875rem, 0.8295rem + 0.2273vw, 1rem);
+  --font-size-bold: clamp(1rem, 0.9545rem + 0.2273vw, 1.125rem);
 
   /* Se över detta sen!!!! */
   --font-h1: clamp(2.375rem, 2.1141rem + 1.3043vw, 3.125rem);
@@ -41,6 +42,7 @@
   --padding-60-vertical: clamp(2.5rem, 2.0455rem + 2.2727vw, 3.75rem);
   --primary-button-padding: clamp(0.5rem, 0.3182rem + 0.9091vw, 1rem)
     clamp(1rem, 0.6364rem + 1.8182vw, 2rem);
+  --icon-spacing: clamp(2.625rem, 2.3977rem + 1.1364vw, 3.25rem);;
 
   /* flow-space with text */
   --space-s: clamp(1.125rem, 1.0795rem + 0.2273vw, 1.25rem);
@@ -73,7 +75,6 @@ body {
 
 p {
   max-width: 70ch;
-
 }
 h1,
 h2,

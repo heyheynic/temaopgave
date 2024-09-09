@@ -1,21 +1,12 @@
 ---
 import CardDynamic from "./CardDynamic.astro";
-const { theme } = Astro.props;
-
-// Här ska jag mappa igenom json-filen istället:
-
-// Projections: https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/projections.json
-
-// Core values: https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/corevalues.json
-
-// Employees https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json
-const { data } = Astro.props;
+const { theme, data, layout } = Astro.props;
 ---
 
 <ul class="scroller">
   {
-    data.values.map((projections) => (
-      <CardDynamic {projections} {theme} />
+    data.values.map((dataType) => (
+      <CardDynamic {dataType} {theme} {layout} />
     ))
   }
 </ul>

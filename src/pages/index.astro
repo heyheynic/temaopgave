@@ -14,6 +14,14 @@ const projectionsData = await fetch(
   "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/projections.json"
 ).then((res) => res.json());
 
+const coreValuesData = await fetch(
+  "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/corevalues.json"
+).then((res) => res.json());
+
+// const employeesData = await fetch(
+//   "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json"
+// ).then((res) => res.json());
+
 //import ScrollingContainer from "../components/ScrollingContainer.astro";
 
 //import { cardContent } from "../data/card-content.js";
@@ -97,7 +105,7 @@ const projectionsData = await fetch(
         </p>
         <PrimBtn theme="white" title="Get in touch" />
       </div>
-      <Scroller data={projectionsData} theme="white__bg" />
+      <Scroller data={coreValuesData} theme="white__bg" layout="button" />
     </section>
   </div>
 
@@ -199,6 +207,9 @@ const projectionsData = await fetch(
 
   .block-5 {
     grid-column: main;
+
+
+    
   }
 
   [data-icon] {
