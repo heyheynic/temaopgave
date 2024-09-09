@@ -72,12 +72,14 @@ const projectionsData = await fetch(
   </div>
   <div class="full yellow">
     <section class="block-4">
-      <TitleColored titleColor="experience" theme="white__bg"/>
-      <h2>More than 25 years of experience</h2>
-      <p>3000+ our clients are insured around the World</p>
-      <CircleChart percent={85} />
-      <CircleChart percent={95} />
-      <CircleChart percent={90} />
+      <div class="text__area">
+        <TitleColored titleColor="experience" theme="white__bg" />
+        <h2>More than 25 years of experience</h2>
+        <p>3000+ our clients are insured around the World</p>
+      </div>
+      <CircleChart percent={85} text="Consistency" />
+      <CircleChart percent={95} text="Improvement" />
+      <CircleChart percent={90} text="Branching" />
     </section>
   </div>
   <div class="full black">
@@ -94,86 +96,106 @@ const projectionsData = await fetch(
 </BaseLayout>
 
 <style>
-  @layer components {
-    .block-2 {
-      display: grid;
-      grid: auto / 1fr 1fr;
-      gap: clamp(2.625rem, 1.7159rem + 4.5455vw, 5.125rem);
+  .block-2 {
+    display: grid;
+    grid: auto / 1fr 1fr;
+    gap: clamp(2.625rem, 1.7159rem + 4.5455vw, 5.125rem);
 
-      .text__area {
+    .text__area {
+      display: grid;
+      gap: 0.8rem;
+      max-width: 70ch;
+
+      .checklist {
         display: grid;
-        gap: 0.8rem;
-        max-width: 70ch;
-
-        .checklist {
-          display: grid;
-          grid: auto/ auto 1fr;
-          gap: var(--gap);
-          align-items: center;
-          margin: 1rem 0;
-        }
-      }
-
-      @media screen and (max-width: 900px) {
-        display: flex;
-        flex-direction: column-reverse;
-
-        .text__area {
-          place-content: center;
-        }
+        grid: auto/ auto 1fr;
+        gap: var(--gap);
+        align-items: center;
+        margin: 1rem 0;
       }
     }
-    .full {
-      background-color: var(--secondary-dark);
-      display: grid;
-      grid: auto/subgrid;
-    }
-    .block-3 {
-      grid-column: main;
 
-      display: grid;
-      grid: repeat(4, 1fr) / 1fr 1fr;
-
-      .icon__container {
-        width: clamp(6rem, 5.7955rem + 1.0227vw, 6.5625rem);
-      }
+    @media screen and (max-width: 900px) {
+      display: flex;
+      flex-direction: column-reverse;
 
       .text__area {
-        grid-row: 2/4;
-        grid-column: 1/2;
+        place-content: center;
       }
-
-      .buttons {
-        grid-row: 3;
-        justify-self: end;
-        align-self: start;
-
-        display: flex;
-        gap: var(--gap);
-      }
-
-      .scroller {
-        background-color: blue;
-        padding: 2em;
-      }
-    }
-
-    .yellow {
-      background-color: var(--primary01);
-    }
-    .block-4 {
-      grid-column: main;
-    }
-
-    .black {
-      background-color: var(--primary03);
-      color: white;
-    }
-
-    .block-5 {
-      grid-column: main;
     }
   }
+  .full {
+    background-color: var(--secondary-dark);
+    display: grid;
+    grid: auto/subgrid;
+  }
+  .block-3 {
+    grid-column: main;
+
+    display: grid;
+    grid: repeat(4, 1fr) / 1fr 1fr;
+
+    .icon__container {
+      width: clamp(6rem, 5.7955rem + 1.0227vw, 6.5625rem);
+    }
+
+    .text__area {
+      grid-row: 2/4;
+      grid-column: 1/2;
+    }
+
+    .buttons {
+      grid-row: 3;
+      justify-self: end;
+      align-self: start;
+
+      display: flex;
+      gap: var(--gap);
+    }
+
+    .scroller {
+      background-color: blue;
+      padding: 2em;
+    }
+  }
+
+  .yellow {
+    background-color: var(--primary01);
+  }
+  .block-4 {
+    grid-column: main;
+    display: grid;
+    grid: auto / repeat(5, 1fr);
+    gap: var(--gap);
+
+    .text__area {
+      grid-column: 1/3;
+      display: grid;
+      gap: var(--gap);
+    }
+
+    @media screen and (max-width: 900px) {
+      grid: repeat(4, 1fr) / repeat(
+          auto-fill,
+          minmax(160px, 1fr)
+        );
+
+      .text__area {
+        grid-column: 1/-1;
+      }
+      
+    }
+  }
+
+  .black {
+    background-color: var(--primary03);
+    color: white;
+  }
+
+  .block-5 {
+    grid-column: main;
+  }
+
   [data-icon] {
     width: clamp(1.125rem, 1.0795rem + 0.2273vw, 1.25rem);
   }

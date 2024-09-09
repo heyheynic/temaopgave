@@ -1,16 +1,27 @@
 ---
+import type { GetStaticPaths } from "astro";
 // got a lot of inspiration from tutorial https://www.freecodecamp.org/news/css-only-pie-chart/ and https://codepen.io/Dannie-Vinther/pen/RwzeYeV
 
-const { percent } = Astro.props;
+const { percent, text } = Astro.props;
 ---
 
-<div class="pie" style={`--percent: ${percent}%`}>
-  <div class="circle"></div>
-  {percent}%
-  <!-- <div class="value">0%</div> -->
+<div class="container">
+  <div class="pie" style={`--percent: ${percent}%`}>
+    <div class="circle"></div>
+    {percent}%
+  </div>
+  <h6>{ text }</h6>
 </div>
 
 <style>
+.container {
+  display: grid;
+  place-items: center;
+  gap: var(--gap);
+  padding: var(--gap) 0 0;
+
+}
+
   @property --percent {
     syntax: "<percentage>";
     inherits: true;
@@ -34,7 +45,6 @@ const { percent } = Astro.props;
     border-radius: 1e5px;
     animation: --pie 2s cubic-bezier(0.22, 0.13, 0.2, 0.94) infinite;
 
-
     .circle {
       aspect-ratio: 1;
       border-radius: 99px;
@@ -48,12 +58,12 @@ const { percent } = Astro.props;
     }
   }
 
+
+
   @keyframes --pie {
     from {
       --percent: 0%;
     }
-
-  
   }
 </style>
 
@@ -97,6 +107,6 @@ const { percent } = Astro.props;
   // This is the code I want to target
   //  <div class="pie" style={`--percent: ${percent}%`}>
 
-    const pie = document.querySelector('.pie');
-  // const counter = pie.style.--percent 
+  const pie = document.querySelector(".pie");
+  // const counter = pie.style.--percent
 </script>
