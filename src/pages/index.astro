@@ -25,7 +25,7 @@ const projectionsData = await fetch(
   <section class="block-2">
     <ImageContainer />
     <div class="text__area">
-      <TitleColored />
+      <TitleColored titleColor="We'll work with you" />
       <h2>What To Expect</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -72,10 +72,12 @@ const projectionsData = await fetch(
   </div>
   <div class="full yellow">
     <section class="block-4">
-<div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis harum consequatur placeat porro quam vero rerum in rem odio saepe dolor minus temporibus nobis, maiores assumenda molestias earum libero quae fugit. Tempora soluta, consequatur obcaecati sed velit illum pariatur dolore.</div>
-<CircleChart percent={30}/>
-
-
+      <TitleColored titleColor="experience" theme="white__bg"/>
+      <h2>More than 25 years of experience</h2>
+      <p>3000+ our clients are insured around the World</p>
+      <CircleChart percent={85} />
+      <CircleChart percent={95} />
+      <CircleChart percent={90} />
     </section>
   </div>
   <div class="full black">
@@ -87,9 +89,8 @@ const projectionsData = await fetch(
       </div>
     </section>
   </div>
-  
-  <section class="block-6">
-  </section>
+
+  <section class="block-6"></section>
 </BaseLayout>
 
 <style>

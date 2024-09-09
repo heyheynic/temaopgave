@@ -2,8 +2,8 @@
 
 @import url("./reset.css") layer(reset);
 @import url("./style.css") layer(style);
-@import url("./components.css") layer(style);
-@import url("./overrides.css") layer(style);
+@import url("./components.css") layer(components);
+@import url("./overrides.css") layer(overrides);
 
 @layer global {
   :root {

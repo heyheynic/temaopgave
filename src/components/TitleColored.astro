@@ -1,22 +1,42 @@
 ---
-
+const { titleColor, theme } = Astro.props;
 ---
 
 <div class="colored__title">
-  <p>Coloured title</p>
+  <p data-theme={theme}>{titleColor}</p>
 </div>
 
 <style>
-  .colored__title {
-    display: flex;
-    align-items: flex-start;
+  @layer components {
+    .colored__title {
+      display: flex;
+      align-items: flex-start;
 
-    p {
-      padding: 0 12px;
-      border-radius: 20px;
-      background-color: var(--primary01);
-      text-transform: uppercase;
-      letter-spacing: 2.32px;
+      p {
+        padding: 0 12px;
+        border-radius: 20px;
+        background-color: var(--primary01);
+        text-transform: uppercase;
+        letter-spacing: 2.32px;
+      }
+
+      [data-theme="yellow__bg"] {
+        color: var(--primary03);
+        background-color: var(--primary01);
+      }
+      [data-theme="green__bg"] {
+        background-color: var(--primary02);
+        color: #fff;
+      }
+      [data-theme="black__bg"] {
+        background-color: var(--primary03);
+        color: #fff;
+      }
+
+      [data-theme="white__bg"] {
+        background-color: #fff;
+        color: var(--primary03);
+      }
     }
   }
 </style>
