@@ -1,9 +1,10 @@
 ---
-import CardGrid from "./CardGrid.astro";
+import CardGrid from "./CardFlex.astro";
 import PrimBtn from "./PrimBtn.astro";
 
 import { Image } from "astro:assets";
 import hero from "../assets/images/hero.png";
+import CardFlex from "./CardFlex.astro";
 ---
 
 <section class="hero">
@@ -19,12 +20,12 @@ import hero from "../assets/images/hero.png";
       Get help from Alex Moore, a professional business coach with advanced
       experience on growth and business scaling.
     </p>
-    <PrimBtn title="Book a Meeting" />
+    <PrimBtn title="Book a Meeting" theme="white" />
   </div>
   <div class="services">
-    <CardGrid />
-    <CardGrid />
-    <CardGrid />
+    <CardFlex cardTitle="Finance & Restructuring" btnTitle="Our Services" />
+    <CardFlex cardTitle="Our Approach" btnTitle="More About" />
+    <CardFlex cardTitle="Consultalk Result" btnTitle="Explore Our Solution" />
   </div>
 </section>
 

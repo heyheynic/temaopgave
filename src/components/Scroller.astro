@@ -1,5 +1,6 @@
 ---
 import CardDynamic from "./CardDynamic.astro";
+const { theme } = Astro.props;
 
 // Här ska jag mappa igenom json-filen istället:
 
@@ -12,7 +13,11 @@ const { data } = Astro.props;
 ---
 
 <ul class="scroller">
-  {data.values.map((projections) => <CardDynamic {projections} />)}
+  {
+    data.values.map((projections) => (
+      <CardDynamic {projections} {theme} />
+    ))
+  }
 </ul>
 
 <style>
@@ -30,7 +35,6 @@ const { data } = Astro.props;
       flex-basis: clamp(2rem, 65%, 400px);
       flex-shrink: 0;
 
-   
       scroll-snap-align: center;
       scroll-snap-stop: always;
     }

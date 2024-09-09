@@ -1,13 +1,70 @@
 ---
-const {title} = Astro.props;
+const { title, theme } = Astro.props;
 ---
 
-<button>{title}</button>
+<button data-theme={theme}>{title}</button>
 
 <style>
   button {
-    background-color: var(--primary02);
     padding: var(--primary-button-padding);
     border-radius: 54px;
+  }
+
+  [data-theme="black"] {
+    background-color: var(--primary03);
+    color: #fff;
+
+    &:hover {
+      outline: 2px solid var(--primary03);
+      background-color: #fff;
+      color: var(--primary03);
+    }
+  }
+  [data-theme="yellow"] {
+    background-color: var(--primary01);
+    color: var(--primary03);
+
+    &:hover {
+      background-color: var(--primary03);
+      color: #fff;
+    }
+  }
+
+  [data-theme="white"] {
+    background-color: var(--secondary-light);
+    color: var(--primary03);
+
+    &:hover {
+      background-color: var(--primary03);
+      color: #fff;
+      outline: 2px white solid;
+    }
+  }
+
+  [data-theme="arrow__l__yellow"] {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H6M12 5l-7 7 7 7"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    aspect-ratio: 1;
+    background-color: var(--primary01);
+    color: var(--primary03);
+  }
+
+  [data-theme="arrow__l__yellow"]:hover,
+  [data-theme="arrow__r__yellow"]:hover {
+    background-color: rgb(255, 255, 255);
+    filter: invert(99%) sepia(3%) saturate(337%) hue-rotate(255deg)
+      brightness(114%) contrast(100%);
+  }
+
+  [data-theme="arrow__r__yellow"] {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 24 24" fill="none" stroke="%23000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    aspect-ratio: 1;
+    background-color: var(--primary01);
+    color: var(--primary03);
   }
 </style>

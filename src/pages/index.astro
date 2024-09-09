@@ -64,11 +64,11 @@ const projectionsData = await fetch(
         </p>
       </div>
       <div class="buttons">
-        <PrimBtn />
-        <PrimBtn />
+        <PrimBtn theme="arrow__l__yellow" />
+        <PrimBtn theme="arrow__r__yellow" />
       </div>
     </section>
-    <Scroller data={projectionsData} />
+    <Scroller data={projectionsData} theme="grey__bg" />
   </div>
   <div class="full yellow">
     <section class="block-4">
@@ -84,11 +84,20 @@ const projectionsData = await fetch(
   </div>
   <div class="full black">
     <section class="block-5">
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto soluta
-        consectetur cupiditate dolorum labore eius esse vel rerum reprehenderit
-        temporibus.
+      <div class="text__area">
+        <TitleColored
+          titleColor="Growing with our clients"
+          theme="yellow__bg"
+        />
+        <h2>Our core values & principles</h2>
+        <p>
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity beta test. Override the digital divide with additional from
+          DevOps.
+        </p>
+        <PrimBtn theme="white" title="Get in touch" />
       </div>
+      <Scroller data={projectionsData} theme="white__bg" />
     </section>
   </div>
 
@@ -175,15 +184,11 @@ const projectionsData = await fetch(
     }
 
     @media screen and (max-width: 900px) {
-      grid: repeat(4, 1fr) / repeat(
-          auto-fill,
-          minmax(160px, 1fr)
-        );
+      grid: repeat(4, 1fr) / repeat(auto-fill, minmax(160px, 1fr));
 
       .text__area {
         grid-column: 1/-1;
       }
-      
     }
   }
 

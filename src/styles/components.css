@@ -4,7 +4,23 @@
 --secondary-dark: #F5F5F5;
 --secondary-light: #E4E4E4; */
 
-header, footer {
-    background-color: var(--primary03);
-    color: var(--secondary-light);
+header,
+footer {
+  background-color: var(--primary03);
+  color: var(--secondary-light);
 }
+
+[data-theme="green__bg"] {
+  background-color: var(--primary02);
+  color: #fff;
+}
+[data-theme="black__bg"] {
+  background-color: var(--primary03);
+  color: #fff;
+}
+
+[data-theme="white__bg"] {
+  background-color: #fff;
+  color: var(--primary03);
+}
+

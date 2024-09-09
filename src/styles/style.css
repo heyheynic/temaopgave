@@ -5,6 +5,7 @@
   --primary03: #181818;
   --secondary-dark: #f5f5f5;
   --secondary-light: #e4e4e4;
+  --neutral-medium: #595566;
 
   /* oklch(from var(--FÄRG) l c h / calc(alpha - 0.3)); */
 
@@ -70,6 +71,10 @@ body {
   } */
 }
 
+p {
+  max-width: 70ch;
+
+}
 h1,
 h2,
 h3,
