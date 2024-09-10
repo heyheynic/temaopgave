@@ -158,7 +158,7 @@ const coreValuesData = await fetch(
       />
     </div>
   </section>
-  <Newsletter/>
+  <Newsletter />
 </BaseLayout>
 
 <style>
@@ -199,7 +199,7 @@ const coreValuesData = await fetch(
     grid-column: main;
 
     display: grid;
-    grid: repeat(4, 1fr) / 1fr 1fr;
+    grid: repeat(4, 1fr) / 3fr 1fr;
 
     .icon__container {
       width: clamp(6rem, 5.7955rem + 1.0227vw, 6.5625rem);
@@ -208,15 +208,24 @@ const coreValuesData = await fetch(
     .text__area {
       grid-row: 2/4;
       grid-column: 1/2;
+
+      @media screen and (max-width: 900px) {
+        grid-column: 1/-1;
+      }
     }
 
     .buttons {
-      grid-row: 3;
+      grid-row: 4;
+      grid-column: 2/-1;
       justify-self: end;
       align-self: start;
 
       display: flex;
       gap: var(--gap);
+
+      @media screen and (max-width: 900px) {
+        align-self: end;
+      }
     }
 
     .scroller {
