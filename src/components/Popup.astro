@@ -2,18 +2,16 @@
 // login
 ---
 
+<button popovertarget="popup">Login</button>
 
-  <button popovertarget="popup">Login</button>
-
-  <div popover id="popup">
-    <h2>Dashboard Login</h2>
-    <form action="">
-      <input type="text" placeholder="Enter Email" required />
-      <input type="text" placeholder="Enter Password" required />
-      <input type="submit" value="Go to dashboard" />
-    </form>
-  </div>
-
+<div popover id="popup">
+  <h2>Dashboard Login</h2>
+  <form action="">
+    <input type="text" placeholder="Enter Email" required />
+    <input type="text" placeholder="Enter Password" required />
+    <input type="submit" value="Go to dashboard" />
+  </form>
+</div>
 
 <style>
   button {
@@ -22,6 +20,17 @@
     background: var(--primary01);
     color: var(--primary03);
     border-radius: 1.25rem;
+
+    &:hover {
+      background-color: var(--primary03);
+      color: #fff;
+      outline: 2px solid #fff;
+    }
+
+    &:active {
+      background-color: #fff;
+      color: var(--primary03);
+    }
   }
   div::backdrop {
     backdrop-filter: blur(10px);
@@ -31,7 +40,7 @@
 
   div {
     border-radius: 1.875rem;
-    padding: var(--padding-40) var(--padding-60-horizontal) 
+    padding: var(--padding-40) var(--padding-60-horizontal)
       var(--padding-60-vertical);
     background-color: var(--primary03);
     color: var(--secondary-light);
@@ -60,6 +69,17 @@
       background-color: var(--primary01);
       justify-self: center;
       padding: var(--primary-button-padding);
+
+      &:hover {
+        background-color: var(--primary03);
+        color: #fff;
+        outline: 2px solid #fff;
+      }
+
+      &:active {
+        background-color: #fff;
+        color: var(--primary03);
+      }
     }
   }
 </style>

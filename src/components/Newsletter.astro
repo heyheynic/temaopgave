@@ -1,0 +1,142 @@
+---
+
+---
+
+<section>
+  <div class="text__area">
+    <h4>Subscribe Our Newsletter</h4>
+    <p>Build stronger Customer Relationships with Consultalk</p>
+  </div>
+  <div class="form">
+    <form action="">
+      <input type="text" placeholder="your mail address" required />
+      <input type="submit" value="Subscribe" />
+    </form>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: var(--primary03);
+    display: grid;
+    grid: auto / 1fr 1fr;
+    place-items: center;
+    gap: clamp(5rem, 3.6364rem + 6.8182vw, 8.75rem);
+    border-radius: 20px;
+    color: #fff;
+    padding: clamp(3rem, 2.0909rem + 4.5455vw, 5.5rem);
+    margin: 0 0 clamp(6.25rem, 5.1591rem + 5.4545vw, 9.25rem) 0;
+    /* for styling the psuedo-elementa*/
+    overflow: clip;
+    position: relative;
+    isolation: isolate;
+    z-index: 1;
+
+    .text__area {
+      display: grid;
+      gap: 0.8em;
+    }
+
+    form {
+      display: grid;
+      gap: var(--gap);
+      grid: auto / 1fr 1fr;
+
+      input {
+        background-color: white;
+        color: #a9a9a9;
+        padding: 1em 2em;
+        border-radius: 54px;
+      }
+
+      input[type="submit"] {
+        color: var(--primary03);
+        justify-self: center;
+        padding: var(--primary-button-padding);
+        font-weight: 600;
+        background-color: var(--primary01);
+
+        &:hover {
+          background-color: var(--primary03);
+          color: #fff;
+          outline: 2px solid #fff;
+        }
+
+        &:active {
+          background-color: #fff;
+          color: var(--primary03);
+        }
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      grid: 1fr 1fr / 1fr;
+      gap: var(--gap);
+      padding: 2rem;
+
+      form {
+        grid-template-columns: 1fr;
+      
+        input {
+          background-color: white;
+          color: #a9a9a9;
+          padding: 0.5em 1em;
+          border-radius: 54px;
+        }
+      }
+    }
+
+    &::before {
+      z-index: -1;
+      --square-count: 12;
+      --square-size: 1rem;
+
+      --_square-size: var(--square-size, 1rem);
+      --_square-half: calc(var(--square-size) / 2);
+      --_square-sum: calc(var(--square-count) * var(--square-size));
+      z-index: -1;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-origin: 0 0;
+      inline-size: calc(
+        round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
+      );
+      aspect-ratio: 0.7;
+      background: linear-gradient(
+          135deg,
+          #be965d,
+          #976f40,
+          #c99b61,
+          #f0be7b,
+          #ffcb85,
+          #eebc79,
+          #c0935b,
+          #976f40
+        )
+        0 0 / 100% 100%;
+      mask:
+        var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+        var(--square-pattern) var(--_square-half) var(--_square-half) /
+          var(--_square-size) var(--_square-size);
+      /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
+      rotate: -45deg;
+    }
+
+    &::after {
+      z-index: -1;
+      content: "";
+      height: 100%;
+      width: 50%;
+      border-radius: inherit;
+      background: #4eaf4e;
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      right: 2rem;
+      rotate: -45deg;
+      transform-origin: right top;
+    }
+  }
+</style>
