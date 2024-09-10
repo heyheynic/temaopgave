@@ -7,7 +7,13 @@ import TitleColored from "../components/TitleColored.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import ImageContainer from "../components/ImageContainer.astro";
+import CardDynamic from "../components/CardDynamic.astro";
+import PrimBtn from "../components/PrimBtn.astro";
 const pageTitle = "About us";
+
+const coreValuesData = await fetch(
+  "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/corevalues.json"
+).then((res) => res.json());
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -45,18 +51,29 @@ const pageTitle = "About us";
       img="about-section-2.png"
       altText="People working together"
     />
-      <!-- component with number  -->
-  <div class="stats">
-    <AboutStats title="1128+" description="Successful Work" />
-    <AboutStats title="908+" description="Team members" />
-    <AboutStats title="258+" description="Happy Customers" />
-    <AboutStats title="564+" description="Creative ideas" />
+    <!-- component with number  -->
+    <div class="stats">
+      <AboutStats title="1128+" description="Successful Work" />
+      <AboutStats title="908+" description="Team members" />
+      <AboutStats title="258+" description="Happy Customers" />
+      <AboutStats title="564+" description="Creative ideas" />
+    </div>
   </div>
-
-  </div>
-
 
   <div class="block-3 full" style="background-color: var(--secondary-dark);">
+    <div class="text__area" >
+      <TitleColored titleColor="Growing with our Clients" theme="yellow__bg" />
+      <h2>Our core values & principles</h2>
+      <p>
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity beta test. Override the digital divide with additional from
+        DevOps.
+      </p>
+      <PrimBtn theme="black" title="Get in touch" />
+    </div>
+    <div class="cards">
+      <CardDynamic data={coreValuesData} theme="white__bg" layout="button" />
+    </div>
   </div>
 
   <div class="block-4">
@@ -89,24 +106,68 @@ const pageTitle = "About us";
     }
 
     img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
 
     .stats {
-        grid-column: 1/-1;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 900px;
-    width: 100%;
-    justify-content: center;
-    margin: auto;
-  }
+      grid-column: 1/-1;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 900px;
+      width: 100%;
+      justify-content: center;
+      margin: auto;
+    }
 
     @media screen and (max-width: 900px) {
-        grid: auto / 1fr;
+      grid: auto / 1fr;
     }
   }
-  
+
+  .block-3 {
+   
+      display: grid;
+      grid: auto/subgrid;
+      gap: var(--gap);
+
+      >* {
+        grid-column: main;
+      }
+    
+    .text__area {
+      display: grid;
+      grid: auto / 1fr auto;
+      gap: var(--gap);
+
+      > * {
+        grid-column: 1/2;
+      }
+
+      button {
+        grid-column: 2/-1;
+        place-self: end;
+      }
+
+      @media screen and (max-width: 900px) {
+        > :nth-child(1) {
+          grid-column: 1/-1;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        > * {
+          grid-column: 1/-1;
+        }
+      }
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-rows: auto;
+      gap: var(--gap);
+      margin: var(--gap);
+    }
+  }
 </style>
