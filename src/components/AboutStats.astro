@@ -1,0 +1,23 @@
+---
+const { title, description } = Astro.props;
+---
+
+<dl>
+  <div>
+    <dt>{title}</dt>
+    <dd>{description}</dd>
+  </div>
+</dl>
+
+<style>
+  dl {
+    margin: 3rem;
+    text-align: center;
+    font-family: var(--font-header);
+
+    dt {
+        font-size: var(--font-h1);
+    }
+
+  }
+</style>

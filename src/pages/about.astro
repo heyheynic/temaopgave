@@ -1,6 +1,12 @@
 ---
+import { Icon } from "astro-icon/components";
+import AboutStats from "../components/AboutStats.astro";
 import AltHero from "../components/AltHero.astro";
+import Newsletter from "../components/Newsletter.astro";
+import TitleColored from "../components/TitleColored.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import ImageContainer from "../components/ImageContainer.astro";
 const pageTitle = "About us";
 ---
 
@@ -11,6 +17,96 @@ const pageTitle = "About us";
     theme="yellow__bg"
     img="alt-hero-about.png"
     altText="Three office people discussing something."
-   
   />
+
+  <div class="block-2">
+    <div class="text__area">
+      <TitleColored titleColor="Our vision" theme="green__bg" />
+      <h2>Turn your ideas into reality.</h2>
+      <p>
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity beta test. Override the digital divide with additional from
+        DevOps.
+      </p>
+      <div class="checklist">
+        <Icon name="tick" />
+        <p>
+          Bring to the table win-win survival strategies to ensure proactive
+          domination. At the end of the day.
+        </p>
+        <Icon name="tick" />
+        <p>
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity to beta test override the digital.
+        </p>
+      </div>
+    </div>
+    <ImageContainer
+      img="about-section-2.png"
+      altText="People working together"
+    />
+      <!-- component with number  -->
+  <div class="stats">
+    <AboutStats title="1128+" description="Successful Work" />
+    <AboutStats title="908+" description="Team members" />
+    <AboutStats title="258+" description="Happy Customers" />
+    <AboutStats title="564+" description="Creative ideas" />
+  </div>
+
+  </div>
+
+
+  <div class="block-3 full" style="background-color: var(--secondary-dark);">
+  </div>
+
+  <div class="block-4">
+    <!-- component for team single view -->
+  </div>
+
+  <!-- component for accordion  -->
+
+  <Newsletter />
 </BaseLayout>
+
+<style>
+  .block-2 {
+    display: grid;
+    grid: 1fr / 1fr 1fr;
+    gap: var(--gap);
+
+    .text__area {
+      grid-column: 1;
+      grid-row: 1;
+      display: grid;
+      gap: var(--gap);
+
+      .checklist {
+        display: grid;
+        grid: 1fr 1fr / auto 1fr;
+        align-items: center;
+        gap: var(--gap);
+      }
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .stats {
+        grid-column: 1/-1;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+  }
+
+    @media screen and (max-width: 900px) {
+        grid: auto / 1fr;
+    }
+  }
+  
+</style>
