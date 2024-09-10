@@ -86,9 +86,11 @@ const coreValuesData = await fetch(
         <h2>More than 25 years of experience</h2>
         <p>3000+ our clients are insured around the World</p>
       </div>
-      <CircleChart percent={85} text="Consistency" />
-      <CircleChart percent={95} text="Improvement" />
-      <CircleChart percent={90} text="Branching" />
+      <div class="circle__charts">
+        <CircleChart percent={85} text="Consistency" />
+        <CircleChart percent={95} text="Improvement" />
+        <CircleChart percent={90} text="Branching" />
+      </div>
     </section>
   </div>
   <div class="full black">
@@ -183,22 +185,35 @@ const coreValuesData = await fetch(
   .block-4 {
     grid-column: main;
     display: grid;
-    grid: auto / repeat(5, 1fr);
+    grid: auto/ 2fr 3fr;
     gap: var(--gap);
 
     .text__area {
-      grid-column: 1/3;
-      display: grid;
+      grid-column: 1/2;
+      display: flex;
+      flex-direction: column;
       gap: var(--gap);
     }
 
-    @media screen and (max-width: 900px) {
-      grid: auto / repeat(auto-fill, minmax(160px, 1fr));
+    .circle__charts {
+      display: grid;
+      grid: auto / repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--gap);
+    }
+
+   @media screen and (max-width: 900px) {
+     /*  grid: auto / repeat(auto-fill, minmax(170px, auto)); 
+      grid: auto/1fr; */
 
       .text__area {
         grid-column: 1/-1;
       }
-    }
+
+      .circle__charts {
+        grid-column: 1/-1;
+
+      }
+    } 
   }
 
   .black {
