@@ -1,7 +1,16 @@
 ---
+import AltHero from "../components/AltHero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "AskExperts";
+const pageTitle = "About us";
 ---
 
-<BaseLayout pageTitle={pageTitle} />
+<BaseLayout pageTitle={pageTitle}>
+  <AltHero
+    title="Creative Services For Boost Your Business Growth"
+    titleColor="Services"
+    theme="yellow__bg"
+    img="alt-hero-about.png"
+    altText="Three office people discussing something."
+   
+  />
 </BaseLayout>

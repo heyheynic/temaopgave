@@ -1,0 +1,11 @@
+---
+import TitleColored from "./TitleColored.astro";
+
+const { title, theme, titleColor } = Astro.props;
+---
+
+<div class="container">
+  <TitleColored theme={theme} titleColor={titleColor} />
+  <h1>{title}</h1>
+</div>
+

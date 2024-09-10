@@ -1,0 +1,96 @@
+---
+import TransparentHeader from "./TransparentHeader.astro";
+
+const { title, theme, titleColor, img, altText } = Astro.props;
+
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+// imports imgs from source folder
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/*.{jpeg,jpg,png,gif}"
+);
+
+// checks if requested img exists
+if (!images[`/src/assets/images/${img}`]) {
+  throw new Error(`Image "${img}" not found in the assets folder.`);
+}
+---
+
+<section class="container">
+  <div class="background__container">
+    <Image
+      src={images[`/src/assets/images/${img}`]()}
+      alt={altText}
+      format="avif"
+      style={`border-radius: 20px;`}
+    />
+  </div>
+
+  <div class="headline">
+    <TransparentHeader title={title} theme={theme} titleColor={titleColor} />
+  </div>
+</section>
+
+<style>
+  section {
+    grid-column: full;
+    display: grid;
+    grid: 1fr / subgrid;
+
+    .background__container {
+      grid-column: full;
+      grid-row: 1;
+
+      img {
+        object-fit: cover;
+        border-radius: 0px !important;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .headline {
+      grid-column: main;
+      grid-row: 1;
+      display: grid;
+      grid: auto/subgrid;
+
+      > * {
+        display: grid;
+        gap: var(--gap);
+        width: fit-content;
+        max-width: 80ch;
+        align-self: center;
+
+        backdrop-filter: blur(6px);
+        background-color: oklch(
+          from var(--secondary-light) l c h / calc(alpha - 0.3)
+        );
+        padding: var(--padding-40) var(--padding-60-vertical);
+        border-radius: 20px;
+      }
+    }
+    /* .headline {
+      grid-column: main;
+      grid-row: 1;
+      display: grid;
+      grid: 1fr/max-content;
+
+      > * {
+        display: grid;
+        gap: var(--gap);
+        max-width: 80ch;
+        height: fit-content;
+        justify-content: start;
+
+        backdrop-filter: blur(6px);
+        background-color: oklch(
+          from var(--secondary-light) l c h / calc(alpha - 0.3)
+        );
+        padding: var(--padding-40) var(--padding-60-vertical);
+        border-radius: 20px;
+      }
+    } */
+  }
+</style>

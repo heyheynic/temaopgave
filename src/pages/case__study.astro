@@ -1,13 +1,19 @@
 ---
+import AltHero from "../components/AltHero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "AskExperts";
+const pageTitle = "Case Study";
 ---
 
-<BaseLayout pageTitle={pageTitle} />
+<BaseLayout pageTitle={pageTitle}>
+  <AltHero
+    title="Taxes & Efficiency"
+    titleColor="Case Studies single"
+    theme="yellow__bg"
+    img="alt-hero-case-study.png"
+    altText="Three people smiling into the camera."
+  />
 </BaseLayout>
 
 <style>
-    /* Case__Study contains an area with a smaller width, the text, which should have a ch max-width */
-
-
+  /* Case__Study contains an area with a smaller width, the text, which should have a ch max-width */
 </style>
