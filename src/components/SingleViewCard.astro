@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon/components";
+import TitleColored from "./TitleColored.astro";
+import { Image } from "astro:assets";
+
+const {name, description} = Astro.props;
+
+// const employeesData = await fetch(
+//   "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json"
+// ).then((res) => res.json());
+
+
+---
+
+
+<!-- {
+    data.values.map(({ title, description, icon }) => (
+        <article>
+        <li data-theme={theme}>
+          {layout === "icon" && <Icon name={icon} />}
+          <h6>{title}</h6>
+          <p>{description}</p>
+          {layout === "button" && <div class="button">Click Me</div>}
+        </li>
+  </article>
+      ))
+    } -->
+
+<article>
+  <div class="image__container">
+    <Image />
+    <TitleColored />
+  </div>
+  <div class="text__area">
+    <h2>{name}</h2>
+<p>{description}</p>
+<div class="links">
+    <a href="">
+        <Icon name=""/>
+    </a>
+    <a href=""> 
+        <Icon name=""/>
+    </a>
+    <a href="">
+        <Icon name=""/>
+    </a>
+</div>
+  </div>
+</article>
+
+<style>
+
+</style>

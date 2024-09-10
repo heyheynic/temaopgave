@@ -61,7 +61,7 @@ const coreValuesData = await fetch(
   </div>
 
   <div class="block-3 full" style="background-color: var(--secondary-dark);">
-    <div class="text__area" >
+    <div class="text__area">
       <TitleColored titleColor="Growing with our Clients" theme="yellow__bg" />
       <h2>Our core values & principles</h2>
       <p>
@@ -77,6 +77,14 @@ const coreValuesData = await fetch(
   </div>
 
   <div class="block-4">
+    <div class="text__area">
+      <TitleColored titleColor="Our team" theme="yellow__bg" />
+      <h2>We champion the bold to achieve the extraordinary
+    </h2>
+      <p>
+        Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team.
+      </p>
+    </div>
     <!-- component for team single view -->
   </div>
 
@@ -127,15 +135,14 @@ const coreValuesData = await fetch(
   }
 
   .block-3 {
-   
-      display: grid;
-      grid: auto/subgrid;
-      gap: var(--gap);
+    display: grid;
+    grid: auto/subgrid;
+    gap: var(--gap);
 
-      >* {
-        grid-column: main;
-      }
-    
+    > * {
+      grid-column: main;
+    }
+
     .text__area {
       display: grid;
       grid: auto / 1fr auto;
@@ -169,5 +176,8 @@ const coreValuesData = await fetch(
       gap: var(--gap);
       margin: var(--gap);
     }
+  }
+
+  .block-4 {
   }
 </style>
