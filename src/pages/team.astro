@@ -2,6 +2,8 @@
 import AltHero from "../components/AltHero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EmployeeSection from "../components/EmployeeSection.astro";
+import PrimBtn from "../components/PrimBtn.astro";
+import Newsletter from "../components/Newsletter.astro";
 
 const pageTitle = "The Team";
 const employeesData = await fetch(
@@ -17,7 +19,33 @@ const employeesData = await fetch(
     img="alt-hero-team.png"
     altText="Three office people discussing something."
   />
-
-  <EmployeeSection {employeesData}/>
-
+  <div class="team__section">
+    <div class="text__area">
+      <h2>Meet Our Great Team</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. enim ad minim
+        veniam, quis nostrud exercitation.
+      </p>
+      <PrimBtn theme="black" title="Join our team" />
+    </div>
+    <EmployeeSection {employeesData} />
+  </div>
+  <Newsletter />
 </BaseLayout>
+
+<style>
+  .text__area {
+    display: grid;
+    grid: 1fr 1fr / 1fr;
+    gap: var(--gap);
+
+    p {
+      grid-row: 2;
+    }
+    button {
+      grid-row: 2;
+      place-self: end;
+    }
+  }
+</style>
