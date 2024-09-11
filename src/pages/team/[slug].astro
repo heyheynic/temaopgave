@@ -1,0 +1,26 @@
+---
+import ImageContainer from '../../components/ImageContainer.astro';
+export async function getStaticPaths() {
+  const employeesData = await fetch(
+    "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json"
+  ).then((res) => res.json());
+
+  return employeesData.map((employee) => ({
+    params: { slug: employee.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+
+const employeesData = await fetch(
+  "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json"
+).then((res) => res.json());
+
+const employee = employeesData.find((emp) => emp.slug === slug);
+---
+
+
+  <h1>{employee.name}</h1>
+  <p>{employee.description}</p>
+  <ImageContainer img={employee.img} altText={employee.name} />
+

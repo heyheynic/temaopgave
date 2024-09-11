@@ -5,15 +5,23 @@ import AltHero from "../components/AltHero.astro";
 import Newsletter from "../components/Newsletter.astro";
 import TitleColored from "../components/TitleColored.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
 import ImageContainer from "../components/ImageContainer.astro";
 import CardDynamic from "../components/CardDynamic.astro";
 import PrimBtn from "../components/PrimBtn.astro";
+import EmployeeSection from "../components/EmployeeSection.astro";
 const pageTitle = "About us";
 
 const coreValuesData = await fetch(
   "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/corevalues.json"
 ).then((res) => res.json());
+
+const employeesData = await fetch(
+  "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/bb0e7fb57b0831e5c14742cd5c5c1e263aeef511/resources/json/employees.json"
+).then((res) => res.json());
+
+const firstThreeEmployees = employeesData.slice(0, 3);
+
+
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -86,6 +94,7 @@ const coreValuesData = await fetch(
       </p>
     </div>
     <!-- component for team single view -->
+  <EmployeeSection employeesData={firstThreeEmployees}  />
   </div>
 
   <!-- component for accordion  -->
