@@ -1,0 +1,131 @@
+---
+import TitleColored from "./TitleColored.astro";
+
+// got help with this guide: https://codepen.io/jdsteinbach/pen/GYmQjo
+---
+
+<div class="container">
+  <TitleColored titleColor="FAQ" theme="green__bg" />
+  <h2>Customer Questions</h2>
+  <details name="faq">
+    <summary><h6>What will happen when I've sent my application?</h6></summary>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nesciunt
+      dolores alias perspiciatis molestiae! Doloribus tempore perspiciatis
+      tenetur ipsam officiis eos impedit? Quasi eum animi harum delectus
+      consequuntur iure tempora.
+    </p>
+  </details>
+  <details name="faq">
+    <summary><h6>Can I get a free trial before I purchase?</h6></summary>
+    <p>
+      Ippsum is the result of synergy between our teams and our customers. Our
+      company culture is focused on excellent productivity, customer
+      satisfaction, respect for team and individual achievements.
+    </p>
+  </details>
+  <details name="faq">
+    <summary>
+      <h6>What should I include in my personal statement?</h6>
+    </summary>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nesciunt
+      dolores alias perspiciatis molestiae! Doloribus tempore perspiciatis
+      tenetur ipsam officiis eos impedit? Quasi eum animi harum delectus
+      consequuntur iure tempora.
+    </p>
+  </details>
+  <details name="faq">
+    <summary>
+      <h6>Will membership plans be charged automatically?</h6>
+    </summary>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nesciunt
+      dolores alias perspiciatis molestiae! Doloribus tempore perspiciatis
+      tenetur ipsam officiis eos impedit? Quasi eum animi harum delectus
+      consequuntur iure tempora.
+    </p>
+  </details>
+  <details name="faq">
+    <summary><h6>What will happen when I've sent my application?</h6></summary>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nesciunt
+      dolores alias perspiciatis molestiae! Doloribus tempore perspiciatis
+      tenetur ipsam officiis eos impedit? Quasi eum animi harum delectus
+      consequuntur iure tempora.
+    </p>
+  </details>
+  <details name="faq">
+    <summary><h6>Can I get a free trial before I purchase?</h6></summary>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nesciunt
+      dolores alias perspiciatis molestiae! Doloribus tempore perspiciatis
+      tenetur ipsam officiis eos impedit? Quasi eum animi harum delectus
+      consequuntur iure tempora.
+    </p>
+  </details>
+</div>
+
+<style>
+  .container {
+    display: grid;
+    grid: auto / 1fr;
+    gap: var(--gap);
+    background-color: var(--secondary-dark);
+    /* padding: var(--gap); */
+    padding:  clamp(1.25rem, -0.9773rem + 11.1364vw, 7.375rem) clamp(1.875rem, -1.4659rem + 16.7045vw, 11.0625rem) clamp(3.75rem, -2.9318rem + 33.4091vw, 22.125rem);
+    border-radius: 30px;
+
+    > * {
+      justify-content: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+    p {
+      margin: var(--gap) 0;
+    }
+    details {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: auto;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #dadada;
+        margin-block: 1em;
+      }
+    }
+    summary {
+      display: grid;
+      position: relative;
+      cursor: pointer;
+      margin: 2em 0;
+
+      &::before,
+      &::after {
+        width: 17px;
+        padding: 1px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        content: "";
+        background-color: currentColor;
+        transform: translateY(-50%);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      &::after {
+        transform: translateY(-50%) rotate(90deg);
+      }
+    }
+    details[open] > summary::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+</style>
