@@ -7,6 +7,9 @@
   --secondary-light: #e4e4e4;
   --neutral-medium: #595566;
 
+  /* --- svg filter fill --- */
+  --primary02-svg: brightness(0) saturate(100%) invert(54%) sepia(84%) saturate(322%) hue-rotate(71deg) brightness(92%) contrast(90%);
+
   /* oklch(from var(--FÄRG) l c h / calc(alpha - 0.3)); */
 
   /* --- fonts --- */

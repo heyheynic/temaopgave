@@ -11,8 +11,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/images/*.{jpeg,jpg,png,gif}"
 );
 
-console.log(Object.keys(images));
-
 if (!images[img])
   throw new Error(
     `"${img}" does not exist in glob: "src/assets/images/*.{jpeg,jpg,png,gif}"`
@@ -26,7 +24,7 @@ if (!images[img])
       <TitleColored titleColor={title} theme={theme} />
     </div>
     <div class="text__area">
-      <h2>{name}</h2>
+      <h4>{name}</h4>
       <p>{description}</p>
     </div>
   </a>
@@ -49,6 +47,7 @@ if (!images[img])
     grid: 1fr / 1fr;
     text-align: center;
     height: fit-content;
+    padding: 2em 0;
 
     .active {
       .image__container {
@@ -56,17 +55,22 @@ if (!images[img])
         grid: 1fr / 1fr;
 
         img {
+          grid-row: 1;
+          grid-column: 1;
           border-radius: 20px;
         }
         > * + * {
+          grid-column: 1;
+          grid-row: 1;
           place-self: end;
+          padding: 1em 0.5em;
         }
       }
 
       .text__area {
         display: grid;
         grid: 1fr 1fr/ 1fr;
-        gap: var(--gap);
+        padding: 1em;
       }
     }
 
@@ -74,6 +78,19 @@ if (!images[img])
       display: flex;
       place-self: center;
       gap: var(--gap);
+
+      a:hover {
+        filter: var(--primary02-svg);
+        scale: 1.2;
+        transition: 50ms;
+      }
+    }
+
+    a:hover {
+      scale: 1.01;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      transition: 100ms scale ease-out;
+      transition-delay: 80ms;
     }
   }
 </style>

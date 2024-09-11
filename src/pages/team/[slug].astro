@@ -1,5 +1,7 @@
 ---
-import ImageContainer from '../../components/ImageContainer.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const pageTitle = "AskExperts";
+import ImageContainer from "../../components/ImageContainer.astro";
 export async function getStaticPaths() {
   const employeesData = await fetch(
     "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json"
@@ -19,8 +21,8 @@ const employeesData = await fetch(
 const employee = employeesData.find((emp) => emp.slug === slug);
 ---
 
-
+<BaseLayout pageTitle={pageTitle}>
   <h1>{employee.name}</h1>
   <p>{employee.description}</p>
   <ImageContainer img={employee.img} altText={employee.name} />
-
+</BaseLayout>
