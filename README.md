@@ -20,13 +20,16 @@ Overall, I feel as if I have gained a much better understanding of the usability
 
 All it has is one element, *<button>*, but it is using JavaScript (what you see in the curly braces {}) to dynamically set its attributes and content. And not only that, but Astro is pretty neat and handles all the js for this, so I don't have to deal with all of that routing as well. 
 
-To finish up the talk about this very dear button, here is the general styling of it:
+### To finish up the talk about this very dear button, here is the general styling of it:
+
 ![Screenshot button](btn2.png)
 
 And here, the button is being used on the **team** page.
+
 ![Screenshot button](btn-html.png)
 
 And voilá, a beautiful button, for the client-user! 
+
 ![Screenshot button](btn-web.png)
 
 It's beautiful. 
