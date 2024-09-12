@@ -1,0 +1,60 @@
+---
+const { title, theme } = Astro.props;
+---
+
+<button data-theme={theme}>{title}</button>
+
+<style>
+  button {
+    padding: var(--primary-button-padding);
+    border-radius: 54px;
+  }
+
+  [data-theme="black"] {
+    background-color: var(--primary03);
+    color: #fff;
+
+    &:hover {
+      outline: 2px solid var(--primary03);
+      background-color: #fff;
+      color: var(--primary03);
+    }
+
+    &:active {
+      background-color: var(--primary01);
+      color: var(--primary03);
+      outline: 2px solid var(--primary03);
+    }
+  }
+  [data-theme="yellow"] {
+    background-color: var(--primary01);
+    color: var(--primary03);
+
+    &:hover {
+      background-color: var(--primary03);
+      color: #fff;
+      outline: #fff 2px solid;
+    }
+    &:active {
+      background-color: #fff;
+      color: var(--primary03);
+    }
+  }
+
+  [data-theme="white"] {
+    background-color: #fff;
+    color: var(--primary03);
+
+    &:hover {
+      background-color: var(--primary03);
+      color: #fff;
+      outline: 2px white solid;
+    }
+
+    &:active {
+      background-color: #fff;
+      color: var(--primary03);
+    }
+  }
+
+</style>

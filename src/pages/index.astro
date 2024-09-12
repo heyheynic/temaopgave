@@ -6,7 +6,7 @@ import Hero from "../components/Hero.astro";
 import ImageContainer from "../components/ImageContainer.astro";
 import TitleColored from "../components/TitleColored.astro";
 import { Icon } from "astro-icon/components";
-import PrimBtn from "../components/PrimBtn.astro";
+import PrimBtn from "../components/Btn.astro";
 import Scroller from "../components/Scroller.astro";
 import CircleChart from "../components/CircleChart.astro";
 import CardDynamic from "../components/CardDynamic.astro";
@@ -19,10 +19,6 @@ const projectionsData = await fetch(
 const coreValuesData = await fetch(
   "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/corevalues.json"
 ).then((res) => res.json());
-
-// const employeesData = await fetch(
-//   "https://raw.githubusercontent.com/heyheynic/frontend-design-skoleopgave/main/resources/json/employees.json"
-// ).then((res) => res.json());
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -75,8 +71,12 @@ const coreValuesData = await fetch(
         </p>
       </div>
       <div class="buttons">
-        <PrimBtn theme="arrow__l__yellow" />
-        <PrimBtn theme="arrow__r__yellow" />
+        <div class="button">
+          <Icon name="arrow-left" />
+        </div>
+        <div class="button">
+          <Icon name="arrow-right" />
+        </div>
       </div>
     </section>
     <Scroller data={projectionsData} theme="grey__bg" />
@@ -223,6 +223,26 @@ const coreValuesData = await fetch(
       display: flex;
       gap: var(--gap);
 
+      .button {
+        background-color: var(--primary01);
+        padding: 1rem;
+        border-radius: 100px;
+
+        svg {
+          width: 2rem;
+        }
+
+        &:hover {
+          background-color: var(--primary03);
+          color: #fff;
+          outline: #fff 2px solid;
+        }
+        &:active {
+          background-color: #fff;
+          color: var(--primary03);
+          outline: 2px solid var(--primary03);
+        }
+      }
       @media screen and (max-width: 900px) {
         align-self: end;
       }

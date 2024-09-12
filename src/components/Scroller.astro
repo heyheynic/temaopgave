@@ -14,10 +14,11 @@ const { theme, data, layout } = Astro.props;
   <CardDynamic data={data} theme={theme} layout={layout} />
 </ul>
 
-
 <style>
   ul {
     grid-column: full;
+    display: grid;
+    grid-template-columns: inherit;
 
     list-style: none;
     overflow-x: auto;
@@ -25,7 +26,8 @@ const { theme, data, layout } = Astro.props;
     gap: var(--gap);
     scroll-snap-type: x mandatory;
     gap: var(--gap);
-    
+
+    padding-inline: max(2rem, 50% - var(--content) / 2);
 
     > * {
       flex-basis: clamp(2rem, 65%, 400px);
@@ -33,6 +35,15 @@ const { theme, data, layout } = Astro.props;
 
       scroll-snap-align: center;
       scroll-snap-stop: always;
+    }
+  }
+
+  ul {
+    display: flex;
+    overflow-x: auto;
+    li {
+      flex-basis: min(400px, 90%);
+      flex-shrink: 0;
     }
   }
 </style>
