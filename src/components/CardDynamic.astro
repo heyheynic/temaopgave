@@ -22,6 +22,7 @@ const { theme, data, layout } = Astro.props;
 <style>
   article {
     cursor: pointer;
+    transition: 50ms scale ease-out;
 
     li {
       padding: clamp(2.375rem, 2.2386rem + 0.6818vw, 2.75rem)
@@ -50,6 +51,9 @@ const { theme, data, layout } = Astro.props;
       }
     }
     &:hover {
+      scale: 1.01;
+      transition: 100ms scale ease-out;
+      transition-delay: 80ms;
       .button {
         background-position: 55%;
         transition: 300ms;
