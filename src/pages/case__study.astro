@@ -106,12 +106,18 @@ const pageTitle = "Case Study";
     grid-template-columns:
       [full-start] var(--col-100)
       [breakout-start] var(--col-100)
-      [content-start] var(--col-100)
+      [content-start] var(--col-50)
       [inner] 7fr
       var(--col-50) [content-end]
       var(--col-100) [breakout-end]
       var(--col-100) [full-end];
     grid-template-rows: auto 1fr;
+  }
+
+  p {
+  max-width: 100%;
+  width: 100%;
+
   }
 
   .article__header {
