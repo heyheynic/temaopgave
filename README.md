@@ -14,6 +14,14 @@ After a year of studying Multimedia design, I still find it a bit challenging wi
 
 ## So, what are some more practical take-aways?
 
+In earlier assignments, I have often had the responsibility to work with slugs and data fetching, so that in itself wasn't too hard for me to figure out. 
 
-In earlier assignments, I have often had the responsibility to work with slugs and data fetching, so that in itself wasn't too hard for me to figure out. I believe the main struggles have been to figure out how to make things as least complicated as possible. Especially with styling and structuring the websites. It sometimes feel as if I have to jump between dedicated .css files, to pages and/or to components to be able to get the right train of action going on. But towards the end
+I believe the main struggles have been to figure out how to make things as least complicated as possible. Especially with styling and structuring the websites and/or components. It sometimes feel as if I have to jump between dedicated .css files, to pages and/or to components to be able to get the right train of action going on. But towards the end I was actually able to figure out how to communicate "across" files, which propbably would have saved me some hours 😵‍💫
+
 ![Screenshot](styling.png)
+
+In this example above, I am inside the component of **SingleViewCard.astro**, where I want the **TitleColored.astro** component to change colour when the *entire card* is being ***hovered***. All of this because I wanted to be able to reuse my one component instead of creating a new one or copying the one I already had. 
+
+As a general, I feel as if I have gained a much better understanding of the usability of working with components, especially after we learnt about the use of **[data-theme]** values in CSS.
+
+## 
