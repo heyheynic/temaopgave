@@ -8,9 +8,9 @@
 
 # A short reflection on this school project
 
-    After a year of studying Multimedia design, I still find it a bit challenging with delegating my time on tasks, and knowing what to prioritize vs what not to. Especially when it comes to working on multiple pages like this one, but despite all of the struggles I am generally happy with the result.
+After a year of studying Multimedia design, I still find it a bit challenging with delegating my time on tasks, and knowing what to prioritize vs what not to. Especially when it comes to working on multiple pages like this one, but despite all of the struggles I am generally happy with the result.
 
-    However, having said that, I will already let you know I had completely forgotten about making a burger menu in mobile view, so good luck navigating around on a smaller viewport than 600px. 🤥
+ However, having said that, I will already let you know I had completely forgotten about making a burger menu in mobile view, so good luck navigating around on a smaller viewport than 600px. 🤥
 
 ## So, what are some more practical take-aways?
 
