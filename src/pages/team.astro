@@ -11,7 +11,7 @@ const employeesData = await fetch(
 ).then((res) => res.json());
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} transition:animate="slide">
   <AltHero
     title="The Consultors"
     titleColor="Team"

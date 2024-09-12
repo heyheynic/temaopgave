@@ -3,6 +3,8 @@ import { Icon } from "astro-icon/components";
 import TitleColored from "./TitleColored.astro";
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
+
 
 const { employee } = Astro.props;
 const { name, description, title, img, theme, slug } = employee;
@@ -17,8 +19,9 @@ if (!images[img])
   );
 ---
 
-<article>
-  <a href={`/team/${slug}`} class="active">
+<article transition:animate="fade">
+  <a href={`/team/${slug}`} class="active" >
+    <ViewTransitions />
     <div class="image__container">
       <Image src={images[img]()} alt={title} />
       <TitleColored titleColor={title} theme={theme} />
@@ -28,7 +31,7 @@ if (!images[img])
       <p>{description}</p>
     </div>
   </a>
-  <div class="links">
+  <div class="socials">
     <a href="">
       <Icon name="instagram" />
     </a>
@@ -74,7 +77,7 @@ if (!images[img])
       }
     }
 
-    .links {
+    .socials {
       display: flex;
       place-self: center;
       gap: var(--gap);
@@ -83,6 +86,11 @@ if (!images[img])
         filter: var(--primary02-svg);
         scale: 1.2;
         transition: 50ms;
+      }
+
+      > * {
+        width: var( --gap);
+border-radius: 100px;
       }
     }
 
