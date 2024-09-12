@@ -8,6 +8,7 @@
   --neutral-medium: #595566;
 
   /* --- svg filter fill --- */
+  --primary01-svg: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(410%) hue-rotate(334deg) brightness(99%) contrast(104%);
   --primary02-svg: brightness(0) saturate(100%) invert(54%) sepia(84%)
     saturate(322%) hue-rotate(71deg) brightness(92%) contrast(90%);
 

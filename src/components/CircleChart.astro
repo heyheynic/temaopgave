@@ -1,5 +1,4 @@
 ---
-import type { GetStaticPaths } from "astro";
 // got a lot of inspiration from tutorial https://www.freecodecamp.org/news/css-only-pie-chart/ and https://codepen.io/Dannie-Vinther/pen/RwzeYeV
 
 const { percent, text } = Astro.props;
@@ -10,17 +9,16 @@ const { percent, text } = Astro.props;
     <div class="circle"></div>
     {percent}%
   </div>
-  <h6>{ text }</h6>
+  <h6>{text}</h6>
 </div>
 
 <style>
-.container {
-  display: grid;
-  place-items: center;
-  gap: var(--gap);
-  padding: var(--gap) 0 0;
-
-}
+  .container {
+    display: grid;
+    place-items: center;
+    gap: var(--gap);
+    padding: var(--gap) 0 0;
+  }
 
   @property --percent {
     syntax: "<percentage>";
@@ -33,9 +31,6 @@ const { percent, text } = Astro.props;
     --offset-pos: 5px;
 
     border: var(--offset-pos) solid transparent;
-    background:
-      linear-gradient(var(--primary01), var(--primary01)) padding-box,
-      conic-gradient(white var(--percent), #daae3c 0) border-box;
     position: relative;
     display: grid;
     place-content: center;
@@ -43,9 +38,30 @@ const { percent, text } = Astro.props;
     aspect-ratio: 1;
     width: var(--width);
     border-radius: 1e5px;
-    animation: --pie 2s cubic-bezier(0.22, 0.13, 0.2, 0.94) infinite;
+    background:
+      linear-gradient(var(--primary01), var(--primary01)) padding-box,
+      conic-gradient(white , #daae3c 0) border-box;
 
-    .circle {
+
+      .circle {
+      aspect-ratio: 1;
+      border-radius: 99px;
+      width: 30px;
+      background: rgb(0, 0, 0);
+      border: white solid 5px;
+      position: absolute;
+      offset-path: border-box;
+   
+    }
+  }
+
+  .animation {
+    animation: --pie 2s cubic-bezier(0.22, 0.13, 0.2, 0.94) both;
+    background:
+      linear-gradient(var(--primary01), var(--primary01)) padding-box,
+      conic-gradient(white var(--percent), #daae3c 0) border-box;
+
+      .circle {
       aspect-ratio: 1;
       border-radius: 99px;
       width: 30px;
@@ -56,10 +72,8 @@ const { percent, text } = Astro.props;
       offset-distance: var(--percent);
       offset-anchor: 50% calc(50% - var(--offset-pos) / 2);
     }
+      
   }
-
-
-
   @keyframes --pie {
     from {
       --percent: 0%;
@@ -68,45 +82,27 @@ const { percent, text } = Astro.props;
 </style>
 
 <script>
-  // # Text below source: https://zellwk.com/blog/css-values-in-js/
 
-  // Inline styles are styles that are present in the HTML in the style attribute.
-  // To get inline styles, you can use the style property.
-  // const element = document.querySelector('.element')
-  // const fontSize = element.style.fontSize
-  // console.log(fontSize) // 2em
-  // const color = element.style.color
-  // console.log(color) // red
+const options = {
+  root: null, 
+  rootMargin: '-50px', 
+  threshold: 1
+};
+  const animate = new IntersectionObserver(entries => {
+  
+  entries.forEach(entry => {
 
-  // Getting computed styles
+    if (entry.isIntersecting) {
 
-  // If your styles are written in the CSS file, you need to get the computed style. To do so, you can use getComputedStyle.
-  // It takes in two values:
-  // const style = getComputedStyle(Element, pseudoElement)
-  // Element here refers to the element you’ve selected with querySelector.
+      entry.target.classList.add('animation');
+    }
+  });
+}, options);
 
-  // pseudoElement here refers to the string of the pseudo element you’re trying to get (if any). You can omit this value if you’re not selecting a pseudo element.
+const elements = document.querySelectorAll('.pie');
 
-  // Let’s walk through an example to help make sense of things. Say you have the following HTML and CSS:
-
-  // <div class="element">This is my element</div>
-
-  // .element {
-  //  background-color: red;
-  // }
-
-  // First, you need to select the element with querySelector. Then, you use getComputedStyle to get the element’s styles.
-
-  // const element = document.querySelector('.element')
-  // const style = getComputedStyle(element)
-
-  // If you log style, you should see an object that contains every CSS property and their respective values.
-
-  // -------------------
-
-  // This is the code I want to target
-  //  <div class="pie" style={`--percent: ${percent}%`}>
-
-  const pie = document.querySelector(".pie");
-  // const counter = pie.style.--percent
+elements.forEach(element => {
+  animate.observe(element);
+});
 </script>
+

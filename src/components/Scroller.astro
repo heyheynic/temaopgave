@@ -1,38 +1,82 @@
 ---
 import CardDynamic from "./CardDynamic.astro";
+import { Icon } from "astro-icon/components";
 const { theme, data, layout } = Astro.props;
 ---
 
-<!-- <ul class="scroller">
-  {
-    data.values.map((dataType) => (
-      <CardDynamic {dataType} {theme} {layout} />
-    ))
-  }
-</ul> -->
-<ul class="scroller">
-  <CardDynamic data={data} theme={theme} layout={layout} />
-</ul>
+<div class="scroller__section">
+  
+  <div class="buttons">
+    <div class="button left" data-scroll="left">
+      <Icon name="arrow-left" />
+    </div>
+    <div class="button right" data-scroll="right">
+      <Icon name="arrow-right" />
+    </div>
+  </div>
+  <ul class="scroller" id="scroller">
+      <CardDynamic data={data} theme={theme} layout={layout} />
+    
+  </ul>
+</div>
 
 <style>
+  .scroller__section {
+    grid-column: full;
+
+    display: grid;
+    grid: auto 1fr / subgrid;
+
+    /* buttons */
+    .buttons {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
+      align-self: start;
+
+      display: flex;
+      gap: var(--gap);
+
+      .button {
+        background-color: var(--primary01);
+        padding: 1rem;
+        border-radius: 100px;
+
+        svg {
+          width: 2rem;
+        }
+
+        &:hover {
+          background-color: var(--primary03);
+          color: #fff;
+          outline: #fff 2px solid;
+        }
+        &:active {
+          background-color: #fff;
+          color: var(--primary03);
+          outline: 2px solid var(--primary03);
+        }
+      }
+      @media screen and (max-width: 900px) {
+        align-self: end;
+      }
+    }
+  }
+
   ul {
     grid-column: full;
+    grid-row: 2;
     display: grid;
-    grid-template-columns: inherit;
-
     list-style: none;
     overflow-x: auto;
     display: flex;
     gap: var(--gap);
     scroll-snap-type: x mandatory;
-    gap: var(--gap);
-
-    padding-inline: max(2rem, 50% - var(--content) / 2);
+    padding-inline: max(1rem, 50% - var(--content) / 2);
 
     > * {
       flex-basis: clamp(2rem, 65%, 400px);
       flex-shrink: 0;
-
       scroll-snap-align: center;
       scroll-snap-stop: always;
     }
@@ -41,9 +85,8 @@ const { theme, data, layout } = Astro.props;
   ul {
     display: flex;
     overflow-x: auto;
-    li {
-      flex-basis: min(400px, 90%);
-      flex-shrink: 0;
-    }
   }
+ 
+
+
 </style>

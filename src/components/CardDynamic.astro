@@ -1,5 +1,4 @@
 ---
-
 import { Icon } from "astro-icon/components";
 
 const { theme, data, layout } = Astro.props;
@@ -7,16 +6,18 @@ const { theme, data, layout } = Astro.props;
 
 {
   data.values.map(({ title, description, icon }) => (
-      <article>
-      <li data-theme={theme}>
-        {layout === "icon" && <Icon name={icon} />}
-        <h6>{title}</h6>
-        <p>{description}</p>
-        {layout === "button" && <div class="button">Click Me</div>}
-      </li>
-</article>
-    ))
-  }
+    
+      <article id="card">
+        <li data-theme={theme}>
+          {layout === "icon" && <Icon name={icon} />}
+          <h6>{title}</h6>
+          <p>{description}</p>
+          {layout === "button" && <div class="button">Click Me</div>}
+        </li>
+      </article>
+  
+  ))
+}
 
 <style>
   article {
@@ -63,5 +64,12 @@ const { theme, data, layout } = Astro.props;
   [data-theme="grey__bg"]:hover {
     background-color: var(--primary03);
     color: #fff;
+
+    svg {
+      filter: var(--primary01-svg) ;
+    }
+
   }
+
+  
 </style>

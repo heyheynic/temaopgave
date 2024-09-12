@@ -70,16 +70,8 @@ const coreValuesData = await fetch(
           aliquip ex ea commodo consequat.
         </p>
       </div>
-      <div class="buttons">
-        <div class="button">
-          <Icon name="arrow-left" />
-        </div>
-        <div class="button">
-          <Icon name="arrow-right" />
-        </div>
-      </div>
     </section>
-    <Scroller data={projectionsData} theme="grey__bg" />
+    <Scroller data={projectionsData} theme="grey__bg" layout="icon"/>
   </div>
   <div class="full yellow">
     <section class="block-4">
@@ -214,7 +206,7 @@ const coreValuesData = await fetch(
       }
     }
 
-    .buttons {
+    /* .buttons {
       grid-row: 4;
       grid-column: 2/-1;
       justify-self: end;
@@ -246,11 +238,11 @@ const coreValuesData = await fetch(
       @media screen and (max-width: 900px) {
         align-self: end;
       }
-    }
+    } */
 
-    .scroller {
+    /* .scroller {
       padding: 2em;
-    }
+    } */
   }
   .yellow {
     background-color: var(--primary01);
