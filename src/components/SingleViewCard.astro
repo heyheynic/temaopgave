@@ -5,7 +5,6 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import { ViewTransitions } from "astro:transitions";
 
-
 const { employee } = Astro.props;
 const { name, description, title, img, theme, slug } = employee;
 
@@ -20,11 +19,11 @@ if (!images[img])
 ---
 
 <article transition:animate="fade">
-  <a href={`/team/${slug}`} class="active" >
+  <a href={`/team/${slug}`} class="active">
     <ViewTransitions />
     <div class="image__container">
       <Image src={images[img]()} alt={title} />
-      <TitleColored titleColor={title} theme={theme} />
+      <TitleColored titleColor={title} theme="yellow__bg-hover">
     </div>
     <div class="text__area">
       <h4>{name}</h4>
@@ -53,6 +52,7 @@ if (!images[img])
     padding: 2em 0;
 
     .active {
+  
       .image__container {
         display: grid;
         grid: 1fr / 1fr;
@@ -75,6 +75,12 @@ if (!images[img])
         grid: 1fr 1fr/ 1fr;
         padding: 1em;
       }
+
+        /* Making the TitleColored change it's color when the entire card is being hovered, instead of just the component itself. */
+     &:hover .image__container .colored__title p {
+        background-color: var(--primary03); 
+        color: #fff; 
+      }
     }
 
     .socials {
@@ -89,8 +95,8 @@ if (!images[img])
       }
 
       > * {
-        width: var( --gap);
-border-radius: 100px;
+        width: var(--gap);
+        border-radius: 100px;
       }
     }
 
@@ -101,4 +107,6 @@ border-radius: 100px;
       transition-delay: 80ms;
     }
   }
+
+      
 </style>
