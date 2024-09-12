@@ -10,6 +10,8 @@
     --full: 1fr;
     --content: min(1200px, 100% - 2em * 2);
   }
+
+  
   body {
     display: grid;
 
@@ -31,15 +33,12 @@
           padding: clamp(6.25rem, 5.1591rem + 5.4545vw, 9.25rem) 0;
         }
       }
-
-      .flow > * + * {
-        margin-block-start: var(--flow-space, 1em);
-      }
     }
 
     .full {
       grid-column: full;
     }
+  
   }
 
   /* content max width 1200px 

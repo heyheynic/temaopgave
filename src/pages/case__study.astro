@@ -136,9 +136,21 @@ const pageTitle = "Case Study";
 
   .text__area {
     grid-column: content;
+    p,
+    ul {
+      color: #595566;
+    }
   }
 
   .image {
     grid-column: inner;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  * + * {
+    margin-block-start: var(--flow-space, 1em);
   }
 </style>
