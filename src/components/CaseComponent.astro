@@ -1,0 +1,48 @@
+---
+import PrimBtn from "./PrimBtn.astro";
+---
+
+<div class="container">
+  <div class="information">
+    <div>
+      <span>Case Name</span>
+      <p>Taxes & Efficiency</p>
+    </div>
+    <div>
+      <span>Category</span>
+      <p>Business</p>
+    </div>
+    <div>
+      <span>Date</span>
+      <p>27th September 2022</p>
+    </div>
+  </div>
+  <PrimBtn title="Live Preview" theme="yellow" />
+</div>
+
+<style>
+  .container {
+    background-color: var(--primary03);
+    color: #fff;
+    display: grid;
+    grid: auto auto/ 1fr auto;
+    /* grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); */
+    gap: var(--gap);
+    align-items: center;
+    border-radius: 30px;
+    padding: var(--padding-60-vertical) var(--padding-60-horizontal);
+
+    .information {
+      display: grid;
+      gap: var(--gap);
+      grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    }
+    button {
+      place-self: end;
+
+      @media screen and (max-width: 830px) {
+        grid-row: 2;
+      }
+    }
+  }
+</style>
