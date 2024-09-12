@@ -1,47 +1,43 @@
-# Astro Starter Kit: Minimal
+# Opgavekrav
 
-```sh
-npm create astro@latest -- --template minimal
-```
+    Kode
+        Implementer det udleverede Figma mockup i Astro.
+        Sørg for at sitet er *responsivt og virker på tværs af forskellige enheder.
+        Anvend gerne de teknikker og principper, der er blevet undervist i løbet af temaet, hvis du finder dem relevante.
+         
+    Deployment
+        Koden skal pushes til et GitHub repository.
+        Siden skal deployes på Netlify og være offentligt tilgængelig.
+         
+    Kort refleksion
+        Reflekter fagligt over din løsning med henblik på udfordringerne og successerne ved opgaven (du vælger selv, hvad du vil fremhæve, bare det er relevant).
+        Fremhæv specifikke kodestumper, der illustrerer brugen af forskellige teknikker og principper (ikke nødvendigvis fra undervisningen).
+        Inkluder screenshots eller billeder for at styrke forklaringerne.
+        Maksimalt 1 side tekst (2400 tegn) ekskl. billeder.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+* Du skal selv finde ud af, hvordan designet skal være på mindre skærme! (Det behøver ikke at være komplekst)
+Aflevering
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Opgaven er en bunden forudsætning for eksamensadgang og skal afleveres via Wiseflow.
 
-## 🚀 Project Structure
+Du skal aflevere:
 
-Inside of your Astro project, you'll see the following folders and files:
+    Link til GitHub-repository
+    Link til live-site (Netlify)
+    Kort refleksion (evt. via en README.md på dit GitHub-repository)
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Vurderingskriterier (bestået / ikke-bestået)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+    Overholdelse af designspecifikationerne.
+    Vedligeholdelsesvenlig kode.
+    God anvendelse af teknikker og layoutprincipper.
+    Evne til at reflektere fagligt over tekniske løsninger.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Any static assets, like images, can be placed in the `public/` directory.
+    # A short reflection on this school project
 
-## 🧞 Commands
+    After a year of studying Multimedia design, I still find it a bit challenging with delegating my time on tasks, and knowing what to prioritize vs what not to. Especially when it comes to working on multiple pages like this one, but despite all of the struggles I am generally happy with the result.
 
-All commands are run from the root of the project, from a terminal:
+    However, having said that, I will already let you know I had completely forgotten about making a burger menu in mobile view, so good luck navigating around on a smaller viewport than 600px 🤥
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+    ## 
