@@ -1,14 +1,6 @@
-# Opgavekrav
-
-    Kort refleksion
-        Reflekter fagligt over din løsning med henblik på udfordringerne og successerne ved opgaven (du vælger selv, hvad du vil fremhæve, bare det er relevant).
-        Fremhæv specifikke kodestumper, der illustrerer brugen af forskellige teknikker og principper (ikke nødvendigvis fra undervisningen).
-        Inkluder screenshots eller billeder for at styrke forklaringerne.
-        Maksimalt 1 side tekst (2400 tegn) ekskl. billeder.
-
 # A short reflection on this school project
 
-After a year of studying Multimedia design, I still find it a bit challenging with delegating my time on tasks, and knowing what to prioritize vs what not to. Especially when it comes to working on multiple pages like this one, but despite all of the struggles I am generally happy with the result.
+After a year of studying Multimedia design, I still find it challenging to delegate my time and determine priorities. Especially when it comes to working on multiple pages like this one, but despite all of the struggles I am generally happy with the result.
 
  However, having said that, I will already let you know I had completely forgotten about making a burger menu in mobile view, so good luck navigating around on a smaller viewport than 600px. 🤥
 
@@ -22,6 +14,20 @@ I believe the main struggles have been to figure out how to make things as least
 
 In this example above, I am inside the component of **SingleViewCard.astro**, where I want the **TitleColored.astro** component to change colour when the *entire card* is being ***hovered***. All of this because I wanted to be able to reuse my one component instead of creating a new one or copying the one I already had. 
 
-As a general, I feel as if I have gained a much better understanding of the usability of working with components, especially after we learnt about the use of **[data-theme]** values in CSS.
+As a general, I feel as if I have gained a much better understanding of the usability of working with components, especially after we learnt about the use of **[data-theme]** values in CSS. It has not only sped up and simplified web developing, but also become such a huge proponent *for* using compnents. It is just mad cool how one can create one simple button, that is essentially empty of all content, as seen in this picture:
 
-## 
+![Screenshot button](btn1.png)
+
+All it has is one element, *<button>*, but it is using JavaScript (what you see in the curly braces {}) to dynamically set its attributes and content. And not only that, but Astro is pretty neat and handles all the js for this, so I don't have to deal with all of that routing as well. 
+
+To finish up the talk about this very dear button, here is the general styling of it:
+![Screenshot button](btn2.png)
+
+And here, the button is being used in the **team** page.
+![Screenshot button](btn-html.png)
+
+And voilá, a beautiful button, for the client-user! 
+![Screenshot button](btn-web.png)
+
+It's beautiful. 
+
