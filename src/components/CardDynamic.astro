@@ -1,28 +1,10 @@
 ---
-// import { Icon } from "astro-icon/components";
-
-// const { theme, dataType, layout } = Astro.props;
-// const { title, description, icon } = dataType;
 
 import { Icon } from "astro-icon/components";
 
 const { theme, data, layout } = Astro.props;
 ---
 
-<!-- 
-<article>
-  <li data-theme={theme}>
-    {layout === "icon" && <Icon name={icon} />}
-    <h6>{title}</h6>
-    <p>{description}</p>
-    {
-      layout === "button" && (
-        <div class="button">Click Me</div>  
-        <div></div>
-      )
-    }
-  </li>
-</article> -->
 {
   data.values.map(({ title, description, icon }) => (
       <article>
@@ -39,7 +21,6 @@ const { theme, data, layout } = Astro.props;
 <style>
   article {
     cursor: pointer;
-    /* width: clamp(18.75rem, 17.7273rem + 5.1136vw, 21.5625rem); */
 
     li {
       padding: clamp(2.375rem, 2.2386rem + 0.6818vw, 2.75rem)
