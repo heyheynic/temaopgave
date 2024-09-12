@@ -71,6 +71,8 @@ const { theme, data, layout } = Astro.props;
     overflow-x: auto;
     display: flex;
     gap: var(--gap);
+    scroll-snap-type: x mandatory;
+
     padding-inline: max(1rem, 50% - var(--content) / 2);
 
     > * {
@@ -82,12 +84,13 @@ const { theme, data, layout } = Astro.props;
   }
 
   ul {
-    scroll-snap-type: x mandatory;
-
     display: flex;
     overflow-x: auto;
+
+    :hover {
+scale: 1;
+    }
   }
- 
 
 
 </style>
