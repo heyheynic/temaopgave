@@ -54,6 +54,18 @@
   --space-l: clamp(2.25rem, 2.1591rem + 0.4545vw, 2.5rem);
   --space-xl: clamp(3.375rem, 3.2386rem + 0.6818vw, 3.75rem);
   --space-2xl: clamp(4.5rem, 4.3182rem + 0.9091vw, 5rem);
+
+  /* --- Case study column widths --- */
+  /* Full width is 1200px, each column is then 100px at full size. 
+  
+  The black "header thing", in my CaseComponent.astro, is max-width 1000px, the text area got a max-width of 800px, and the image inside the article has a max width of 700px. I have used utopia to get a responsive range from 0px in the outer columns, to their respective full-width. 
+  
+  This guide helped me with figuring out how to solve this issue https://css-tricks.com/almanac/properties/g/grid-template-columns/ */
+
+  /* Space 2xs: 0px → 50px */
+  --col-50: clamp(0rem, -1.1364rem + 5.6818vw, 3.125rem);
+  /* Space s: 0px → 100px */
+  --col-100: clamp(0rem, -2.2727rem + 11.3636vw, 6.25rem);
 }
 
 body {
